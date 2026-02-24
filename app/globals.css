@@ -320,3 +320,9 @@
   from { transform: translateY(-100%); }
   to   { transform: translateY(110vh); }
 }
+
+/* highlight.js: transparent background so diff row colors show through */
+.hljs {
+  background: transparent !important;
+  padding: 0 !important;
+}

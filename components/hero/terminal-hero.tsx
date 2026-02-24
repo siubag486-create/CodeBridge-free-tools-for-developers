@@ -527,6 +527,7 @@ export default function TerminalHero() {
                         fontFamily:
                           "var(--font-space-mono), monospace",
                         fontSize: "clamp(1rem, 2vw, 1.35rem)",
+                        fontWeight: 700,
                         color: "var(--electric-blue)",
                         marginTop: "10px",
                         letterSpacing: "0.08em",
@@ -656,7 +657,32 @@ export default function TerminalHero() {
                     <span style={{ opacity: 0.6, fontSize: "0.66rem" }}>$</span>
                     Regex Tester
                   </span>
-                  <span style={{ fontSize: "0.72rem", opacity: 0.6, letterSpacing: "0.04em" }}>/tools/regex-tester</span>
+                </a>
+
+                {/* Text Diff — active */}
+                <a
+                  href="/tools/text-diff"
+                  style={{
+                    fontFamily: "var(--font-geist-mono), monospace",
+                    padding: "12px 8px",
+                    borderRadius: "8px",
+                    textDecoration: "none",
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    gap: "3px",
+                    border: "1px solid rgba(0,255,136,0.35)",
+                    backgroundColor: "rgba(0,255,136,0.07)",
+                    color: "var(--terminal-green)",
+                    transition: "all 0.2s",
+                  }}
+                  className="hover:bg-[rgba(0,255,136,0.14)] hover:shadow-[0_0_20px_rgba(0,255,136,0.15)]"
+                >
+                  <span style={{ display: "flex", alignItems: "center", gap: "6px", fontSize: "0.8rem", letterSpacing: "0.03em" }}>
+                    <span style={{ opacity: 0.6, fontSize: "0.66rem" }}>$</span>
+                    Text Diff
+                  </span>
                 </a>
 
                 {/* Coming soon tools */}

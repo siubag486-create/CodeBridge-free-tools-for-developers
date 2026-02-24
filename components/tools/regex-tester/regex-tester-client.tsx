@@ -135,7 +135,7 @@ export default function RegexTesterClient() {
     } catch (e) {
       setStatus("error");
       setErrorMessage(
-        e instanceof Error ? e.message : "Invalid regular expression"
+        e instanceof Error ? e.message : "Invalid regular expression",
       );
       setMatches([]);
     }
@@ -170,8 +170,8 @@ export default function RegexTesterClient() {
     status === "match" || status === "ready"
       ? "rgba(0,255,136,0.35)"
       : status === "nomatch" || status === "error"
-      ? "rgba(255,123,114,0.35)"
-      : "var(--terminal-border-bright)";
+        ? "rgba(255,123,114,0.35)"
+        : "var(--terminal-border-bright)";
 
   const activeFlag: React.CSSProperties = {
     ...toolbarBtnBase,
@@ -297,7 +297,12 @@ export default function RegexTesterClient() {
 
           {/* Right: flag toggles + action buttons */}
           <div
-            style={{ display: "flex", alignItems: "center", gap: "5px", flexWrap: "wrap" }}
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: "5px",
+              flexWrap: "wrap",
+            }}
           >
             {(["g", "i", "m", "s"] as const).map((flag) => (
               <button
@@ -378,7 +383,7 @@ export default function RegexTesterClient() {
                 }}
               />
               <span style={{ color: "var(--terminal-green)" }}>
-                Enter test string
+                Ready
               </span>
             </>
           )}
@@ -429,7 +434,8 @@ export default function RegexTesterClient() {
       <div
         style={{
           display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 420px), 1fr))",
+          gridTemplateColumns:
+            "repeat(auto-fit, minmax(min(100%, 420px), 1fr))",
           gap: "12px",
           minHeight: "500px",
         }}
@@ -437,11 +443,14 @@ export default function RegexTesterClient() {
         {/* Left: Test String */}
         <div
           style={{
-            border: "1px solid var(--terminal-border-bright)",
+            border: `1px solid ${status === "ready" ? "rgba(0,255,136,0.3)" : "var(--terminal-border-bright)"}`,
             borderRadius: "10px",
             overflow: "hidden",
             display: "flex",
             flexDirection: "column",
+            transition: "border-color 0.2s",
+            boxShadow:
+              status === "ready" ? "0 0 12px rgba(0,255,136,0.06)" : "none",
           }}
         >
           {/* Title bar */}
@@ -451,29 +460,71 @@ export default function RegexTesterClient() {
               alignItems: "center",
               gap: "12px",
               padding: "9px 14px",
-              backgroundColor: "rgba(255,255,255,0.03)",
+              backgroundColor:
+                status === "ready"
+                  ? "rgba(0,255,136,0.04)"
+                  : "rgba(255,255,255,0.03)",
               borderBottom: "1px solid var(--terminal-border)",
+              transition: "background-color 0.2s",
             }}
           >
             <WindowDots />
             <span
               style={{
-                color: "var(--code-comment)",
+                color:
+                  status === "ready"
+                    ? "var(--terminal-green)"
+                    : "var(--code-comment)",
                 fontSize: "0.68rem",
                 fontFamily: monoFont,
                 letterSpacing: "0.08em",
                 fontWeight: 600,
+                transition: "color 0.2s",
               }}
             >
               test-string
             </span>
+            {status === "ready" && (
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "6px",
+                  marginLeft: "auto",
+                }}
+              >
+                <div
+                  style={{
+                    width: "6px",
+                    height: "6px",
+                    borderRadius: "50%",
+                    backgroundColor: "var(--terminal-green)",
+                    boxShadow: "0 0 6px var(--terminal-green)",
+                    animation: "cursor-blink 1s step-end infinite",
+                    flexShrink: 0,
+                  }}
+                />
+                <span
+                  style={{
+                    fontSize: "0.62rem",
+                    color: "var(--terminal-green)",
+                    fontFamily: monoFont,
+                    opacity: 0.8,
+                  }}
+                >
+                  enter test string
+                </span>
+              </div>
+            )}
           </div>
 
           {/* Textarea */}
           <textarea
             value={testString}
             onChange={(e) => setTestString(e.target.value)}
-            placeholder={"Enter test string here...\n\nPaste any text and watch matches highlight in real-time."}
+            placeholder={
+              "Enter test string here...\n\nPaste any text and watch matches highlight in real-time."
+            }
             spellCheck={false}
             autoComplete="off"
             autoCorrect="off"
@@ -589,7 +640,7 @@ export default function RegexTesterClient() {
                     </mark>
                   ) : (
                     <span key={i}>{seg.text}</span>
-                  )
+                  ),
                 )}
               </pre>
             ) : (

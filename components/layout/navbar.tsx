@@ -84,6 +84,21 @@ backdropFilter: "blur(12px)",
           >
             Regex
           </Link>
+          <Link
+            href="/tools/text-diff"
+            style={{
+              fontFamily: "'RoundedFixedsys', var(--font-geist-mono), monospace",
+              fontSize: "0.75rem",
+              letterSpacing: "0.04em",
+              textDecoration: "none",
+              padding: "5px 11px",
+              borderRadius: "5px",
+              transition: "all 0.2s",
+            }}
+            className="text-[var(--code-comment)] border border-transparent hover:text-[var(--electric-blue)] hover:border-[var(--terminal-border)] hover:bg-[rgba(88,166,255,0.06)]"
+          >
+            Diff
+          </Link>
         </nav>
 
       </div>
