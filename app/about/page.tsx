@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "About — CodeBridge",
+  title: "About — OmniDev",
   description:
-    "About CodeBridge — free browser-based developer tools built by PSWK DEV. No sign-up, no server, just fast tools for developers.",
+    "About OmniDev — free browser-based developer tools built by PSWK DEV. No sign-up, no server, just fast tools for developers.",
 };
 
 const monoFont = "'RoundedFixedsys', var(--font-geist-mono), monospace";
@@ -62,7 +62,7 @@ export default function AboutPage() {
               marginBottom: "12px",
             }}
           >
-            About CodeBridge
+            About OmniDev
           </h1>
           <p
             style={{
@@ -86,7 +86,7 @@ export default function AboutPage() {
           }}
         />
 
-        {/* What is CodeBridge */}
+        {/* What is OmniDev */}
         <section style={{ marginBottom: "40px" }}>
           <h2
             style={{
@@ -97,7 +97,7 @@ export default function AboutPage() {
               marginBottom: "14px",
             }}
           >
-            What is CodeBridge?
+            What is OmniDev?
           </h2>
           <p
             style={{
@@ -108,7 +108,7 @@ export default function AboutPage() {
               marginBottom: "12px",
             }}
           >
-            CodeBridge is a collection of free, open-use developer utilities
+            OmniDev is a collection of free, open-use developer utilities
             designed to help engineers, designers, and curious people work
             faster. Every tool runs{" "}
             <span style={{ color: "rgba(255,255,255,0.75)" }}>
@@ -124,7 +124,7 @@ export default function AboutPage() {
               lineHeight: 1.8,
             }}
           >
-            We built CodeBridge because we got tired of copy-pasting between
+            We built OmniDev because we got tired of copy-pasting between
             fragmented tools. One place, zero friction, instant results.
           </p>
         </section>
@@ -169,6 +169,10 @@ export default function AboutPage() {
               {
                 name: "JWT Decoder",
                 desc: "Decode JWTs, verify signatures, and monitor expiry live",
+              },
+              {
+                name: "UUID Generator",
+                desc: "Generate UUID v4 and v1 identifiers in bulk with format options",
               },
             ].map(({ name, desc }) => (
               <div
@@ -226,7 +230,7 @@ export default function AboutPage() {
               lineHeight: 1.8,
             }}
           >
-            CodeBridge is built and maintained by{" "}
+            OmniDev is built and maintained by{" "}
             <span style={{ color: "rgba(255,255,255,0.75)" }}>PSWK DEV</span>,
             a small team of software developers who enjoy building tools that
             make everyday development tasks easier. We believe great tooling

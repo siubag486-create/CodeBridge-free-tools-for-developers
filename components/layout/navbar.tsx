@@ -38,7 +38,7 @@ backdropFilter: "blur(12px)",
               letterSpacing: "0.05em",
             }}
           >
-            CodeBridge
+            OmniDev
           </span>
           <span
             style={{
@@ -53,82 +53,42 @@ backdropFilter: "blur(12px)",
         </Link>
 
         {/* Nav links */}
-        <nav style={{ display: "flex", alignItems: "center", gap: "4px" }}>
-          <Link
-            href="/tools/json-formatter"
-            style={{
-              fontFamily: "'RoundedFixedsys', var(--font-geist-mono), monospace",
-              fontSize: "0.75rem",
-              letterSpacing: "0.04em",
-              textDecoration: "none",
-              padding: "5px 11px",
-              borderRadius: "5px",
-              transition: "all 0.2s",
-            }}
-            className="text-[var(--code-comment)] border border-transparent hover:text-[var(--electric-blue)] hover:border-[var(--terminal-border)] hover:bg-[rgba(88,166,255,0.06)]"
-          >
-            JSON
-          </Link>
-          <Link
-            href="/tools/regex-tester"
-            style={{
-              fontFamily: "'RoundedFixedsys', var(--font-geist-mono), monospace",
-              fontSize: "0.75rem",
-              letterSpacing: "0.04em",
-              textDecoration: "none",
-              padding: "5px 11px",
-              borderRadius: "5px",
-              transition: "all 0.2s",
-            }}
-            className="text-[var(--code-comment)] border border-transparent hover:text-[var(--electric-blue)] hover:border-[var(--terminal-border)] hover:bg-[rgba(88,166,255,0.06)]"
-          >
-            Regex
-          </Link>
-          <Link
-            href="/tools/text-diff"
-            style={{
-              fontFamily: "'RoundedFixedsys', var(--font-geist-mono), monospace",
-              fontSize: "0.75rem",
-              letterSpacing: "0.04em",
-              textDecoration: "none",
-              padding: "5px 11px",
-              borderRadius: "5px",
-              transition: "all 0.2s",
-            }}
-            className="text-[var(--code-comment)] border border-transparent hover:text-[var(--electric-blue)] hover:border-[var(--terminal-border)] hover:bg-[rgba(88,166,255,0.06)]"
-          >
-            Diff
-          </Link>
-          <Link
-            href="/tools/base64"
-            style={{
-              fontFamily: "'RoundedFixedsys', var(--font-geist-mono), monospace",
-              fontSize: "0.75rem",
-              letterSpacing: "0.04em",
-              textDecoration: "none",
-              padding: "5px 11px",
-              borderRadius: "5px",
-              transition: "all 0.2s",
-            }}
-            className="text-[var(--code-comment)] border border-transparent hover:text-[var(--electric-blue)] hover:border-[var(--terminal-border)] hover:bg-[rgba(88,166,255,0.06)]"
-          >
-            Base64
-          </Link>
-          <Link
-            href="/tools/jwt-decoder"
-            style={{
-              fontFamily: "'RoundedFixedsys', var(--font-geist-mono), monospace",
-              fontSize: "0.75rem",
-              letterSpacing: "0.04em",
-              textDecoration: "none",
-              padding: "5px 11px",
-              borderRadius: "5px",
-              transition: "all 0.2s",
-            }}
-            className="text-[var(--code-comment)] border border-transparent hover:text-[var(--electric-blue)] hover:border-[var(--terminal-border)] hover:bg-[rgba(88,166,255,0.06)]"
-          >
-            JWT
-          </Link>
+        <nav style={{ display: "flex", alignItems: "center", gap: "2px" }}>
+          {[
+            { href: "/about", label: "About" },
+            { href: "/contact", label: "Contact" },
+            { href: "/privacy-policy", label: "Privacy Policy" },
+            { href: "/terms", label: "Terms of Service" },
+          ].map(({ href, label }) => (
+            <Link
+              key={href}
+              href={href}
+              style={{
+                fontFamily: "'RoundedFixedsys', var(--font-geist-mono), monospace",
+                fontSize: "0.75rem",
+                letterSpacing: "0.04em",
+                textDecoration: "none",
+                padding: "5px 13px",
+                borderRadius: "5px",
+                transition: "all 0.2s",
+                color: "rgba(200, 210, 220, 0.85)",
+                border: "1px solid rgba(255,255,255,0.08)",
+                backgroundColor: "rgba(255,255,255,0.04)",
+              }}
+              onMouseEnter={(e) => {
+                (e.currentTarget as HTMLAnchorElement).style.color = "#58a6ff";
+                (e.currentTarget as HTMLAnchorElement).style.borderColor = "rgba(88,166,255,0.35)";
+                (e.currentTarget as HTMLAnchorElement).style.backgroundColor = "rgba(88,166,255,0.08)";
+              }}
+              onMouseLeave={(e) => {
+                (e.currentTarget as HTMLAnchorElement).style.color = "rgba(200, 210, 220, 0.85)";
+                (e.currentTarget as HTMLAnchorElement).style.borderColor = "rgba(255,255,255,0.08)";
+                (e.currentTarget as HTMLAnchorElement).style.backgroundColor = "rgba(255,255,255,0.04)";
+              }}
+            >
+              {label}
+            </Link>
+          ))}
         </nav>
 
       </div>

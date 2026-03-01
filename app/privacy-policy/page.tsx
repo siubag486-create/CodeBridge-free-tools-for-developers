@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy — CodeBridge",
+  title: "Privacy Policy — OmniDev",
   description:
-    "CodeBridge Privacy Policy. Learn how we handle your data and use of Google AdSense and analytics.",
+    "OmniDev Privacy Policy. Learn how we handle your data and use of Google AdSense and analytics.",
 };
 
 const monoFont = "'RoundedFixedsys', var(--font-geist-mono), monospace";
@@ -122,7 +122,7 @@ export default function PrivacyPolicyPage() {
 
         <Section title="1. Overview">
           <p>
-            CodeBridge (&quot;we&quot;, &quot;us&quot;, &quot;our&quot;) is a
+            OmniDev (&quot;we&quot;, &quot;us&quot;, &quot;our&quot;) is a
             free online developer tools site operated by PSWK DEV. This Privacy
             Policy explains what information we collect, why we collect it, and
             how we use it. We are committed to protecting your privacy.
@@ -138,7 +138,7 @@ export default function PrivacyPolicyPage() {
             via the Contact page.
           </p>
           <p style={{ marginBottom: "10px" }}>
-            All tools on CodeBridge (JSON Formatter, Regex Tester, Text Diff,
+            All tools on OmniDev (JSON Formatter, Regex Tester, Text Diff,
             Base64, JWT Decoder) run{" "}
             <strong style={{ color: "rgba(255,255,255,0.7)" }}>
               entirely in your browser
@@ -159,7 +159,7 @@ export default function PrivacyPolicyPage() {
 
         <Section title="3. Cookies">
           <p style={{ marginBottom: "10px" }}>
-            CodeBridge itself does not set first-party cookies. However,
+            OmniDev itself does not set first-party cookies. However,
             third-party services we use (Google AdSense, Google Analytics) may
             set cookies to serve personalised ads and measure site traffic.
           </p>
@@ -237,7 +237,7 @@ export default function PrivacyPolicyPage() {
 
         <Section title="7. Children's Privacy">
           <p>
-            CodeBridge is not directed at children under 13. We do not
+            OmniDev is not directed at children under 13. We do not
             knowingly collect personal information from children.
           </p>
         </Section>
@@ -258,7 +258,7 @@ export default function PrivacyPolicyPage() {
               href="/contact"
               style={{ color: "var(--electric-blue)" }}
             >
-              codebridge.contact@gmail.com
+              omnidev.contact@gmail.com
             </a>
           </p>
         </Section>

@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Terms of Service — CodeBridge",
+  title: "Terms of Service — OmniDev",
   description:
-    "CodeBridge Terms of Service. Read the conditions for using our free developer tools.",
+    "OmniDev Terms of Service. Read the conditions for using our free developer tools.",
 };
 
 const monoFont = "'RoundedFixedsys', var(--font-geist-mono), monospace";
@@ -124,7 +124,7 @@ export default function TermsPage() {
 
         <Section title="1. Acceptance of Terms">
           <p>
-            By accessing and using CodeBridge (&quot;the Service&quot;), you
+            By accessing and using OmniDev (&quot;the Service&quot;), you
             accept and agree to be bound by these Terms of Service. If you do
             not agree, please do not use the Service.
           </p>
@@ -132,7 +132,7 @@ export default function TermsPage() {
 
         <Section title="2. Description of Service">
           <p>
-            CodeBridge provides free, browser-based developer utility tools
+            OmniDev provides free, browser-based developer utility tools
             including JSON Formatter, Regex Tester, Text Diff, Base64
             Encoder/Decoder, JWT Decoder, and other tools. All processing
             occurs locally in your browser. We do not store, transmit, or
@@ -164,7 +164,7 @@ export default function TermsPage() {
 
         <Section title="4. Intellectual Property">
           <p>
-            The CodeBridge website, its design, and original content are the
+            The OmniDev website, its design, and original content are the
             property of PSWK DEV. The tools are provided for personal and
             professional use. You may not reproduce or redistribute the site
             code without permission.
@@ -221,7 +221,7 @@ export default function TermsPage() {
               href="/contact"
               style={{ color: "var(--electric-blue)" }}
             >
-              codebridge.contact@gmail.com
+              omnidev.contact@gmail.com
             </a>
             .
           </p>

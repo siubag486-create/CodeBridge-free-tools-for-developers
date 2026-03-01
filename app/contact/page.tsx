@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Contact — CodeBridge",
+  title: "Contact — OmniDev",
   description:
-    "Contact the CodeBridge team. Reach out for bug reports, feature requests, or general inquiries.",
+    "Contact the OmniDev team. Reach out for bug reports, feature requests, or general inquiries.",
 };
 
 const monoFont = "'RoundedFixedsys', var(--font-geist-mono), monospace";

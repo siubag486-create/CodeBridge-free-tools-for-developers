@@ -3,7 +3,7 @@ import RegexTesterClient from "@/components/tools/regex-tester/regex-tester-clie
 import ToolNavSidebar from "@/components/layout/tool-nav-sidebar";
 
 export const metadata: Metadata = {
-  title: "Regex Tester — Free Online Tool | CodeBridge",
+  title: "Regex Tester — Free Online Tool | OmniDev",
   description:
     "Test regular expressions in real-time. See matches highlighted instantly, explore capture groups, and toggle flags. No server required.",
   keywords: [

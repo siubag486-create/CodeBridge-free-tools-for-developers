@@ -22,13 +22,13 @@ const spaceMono = Space_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "CodeBridge — Free tools for Developers",
+  title: "OmniDev — Free tools for Developers",
   description:
-    "Free tools for Developers. CodeBridge provides interactive developer tools to help you build, format, and debug faster.",
+    "Free tools for Developers. OmniDev provides interactive developer tools to help you build, format, and debug faster.",
   openGraph: {
-    title: "CodeBridge — Free tools for Developers",
+    title: "OmniDev — Free tools for Developers",
     description:
-      "Free tools for Developers. CodeBridge provides interactive developer tools to help you build, format, and debug faster.",
+      "Free tools for Developers. OmniDev provides interactive developer tools to help you build, format, and debug faster.",
     type: "website",
   },
 };

@@ -3,7 +3,7 @@ import JwtDecoderClient from "@/components/tools/jwt-decoder/jwt-decoder-client"
 import ToolNavSidebar from "@/components/layout/tool-nav-sidebar";
 
 export const metadata: Metadata = {
-  title: "JWT Decoder — Free Online JWT Decoder & Verifier | CodeBridge",
+  title: "JWT Decoder — Free Online JWT Decoder & Verifier | OmniDev",
   description:
     "Decode and inspect JWT tokens instantly. View Header, Payload, and Signature with live expiry countdown. Verify HMAC signatures with your secret key. Runs entirely in your browser — zero server calls.",
   keywords: [

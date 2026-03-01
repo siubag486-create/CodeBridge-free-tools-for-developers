@@ -51,7 +51,7 @@ export default function Footer() {
                 fontWeight: 700,
               }}
             >
-              CodeBridge
+              OmniDev
             </span>
             <span
               style={{

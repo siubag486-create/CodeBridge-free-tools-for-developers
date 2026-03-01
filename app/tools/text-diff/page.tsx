@@ -3,7 +3,7 @@ import TextDiffClient from "@/components/tools/text-diff/text-diff-client";
 import ToolNavSidebar from "@/components/layout/tool-nav-sidebar";
 
 export const metadata: Metadata = {
-  title: "Text Diff Tool — Free Online Comparison | CodeBridge",
+  title: "Text Diff Tool — Free Online Comparison | OmniDev",
   description:
     "Compare two texts, code files, or configs with instant line-by-line diff. Split and unified views, syntax highlighting, ignore whitespace. 100% client-side.",
   keywords: [

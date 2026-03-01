@@ -2,8 +2,8 @@
 
 import { useEffect, useState } from "react";
 
-const PROMPT = "$ codebridge --tools";
-const TITLE = "CodeBridge";
+const PROMPT = "$ omnidev --tools";
+const TITLE = "OmniDev";
 const SUBTITLE = "Free tools for Developers";
 
 const CODE_COLUMNS = [
@@ -85,7 +85,7 @@ const CODE_COLUMNS = [
       "  await init();",
       "}",
       "",
-      "export { CodeBridge };",
+      "export { OmniDev };",
     ],
   },
   {
@@ -145,7 +145,7 @@ const CODE_COLUMNS = [
       ");",
       "",
       "export const meta = {",
-      "  title: 'CodeBridge'",
+      "  title: 'OmniDev'",
       "};",
       "",
       "git status",
@@ -183,7 +183,7 @@ type LineConfig = {
 
 const terminalLines: LineConfig[] = [
   {
-    text: "Initializing CodeBridge toolset...",
+    text: "Initializing OmniDev toolset...",
     delay: 100,
     style: { color: "#6e7681" },
   },
@@ -445,7 +445,7 @@ export default function TerminalHero() {
                   letterSpacing: "0.05em",
                 }}
               >
-                codebridge — tools — 120x40
+                omnidev — tools — 120x40
               </span>
             </div>
 
@@ -662,7 +662,7 @@ export default function TerminalHero() {
                   >
                     $
                   </span>
-                  codebridge --list-tools
+                  omnidev --list-tools
                 </div>
                 {[
                   {
@@ -694,6 +694,12 @@ export default function TerminalHero() {
                     cmd: "jwt-decoder",
                     desc: "Decode & verify JWT tokens",
                     href: "/tools/jwt-decoder",
+                  },
+                  {
+                    icon: "UID",
+                    cmd: "uuid-generator",
+                    desc: "Generate UUID v1 / v4 / v7 identifiers",
+                    href: "/tools/uuid-generator",
                   },
                 ].map((tool, i, arr) => (
                   <a

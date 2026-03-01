@@ -3,7 +3,7 @@ import JsonFormatterClient from "@/components/tools/json-formatter/json-formatte
 import ToolNavSidebar from "@/components/layout/tool-nav-sidebar";
 
 export const metadata: Metadata = {
-  title: "JSON Formatter & Validator — Free Online Tool | CodeBridge",
+  title: "JSON Formatter & Validator — Free Online Tool | OmniDev",
   description:
     "Format, validate, and minify JSON instantly in your browser. No server required. Fast, free JSON beautifier with syntax highlighting and error detection.",
   keywords: [

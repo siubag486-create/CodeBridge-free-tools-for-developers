@@ -3,7 +3,7 @@ import Base64Client from "@/components/tools/base64/base64-client";
 import ToolNavSidebar from "@/components/layout/tool-nav-sidebar";
 
 export const metadata: Metadata = {
-  title: "Base64 Encoder/Decoder — Free Online Tool | CodeBridge",
+  title: "Base64 Encoder/Decoder — Free Online Tool | OmniDev",
   description:
     "Encode and decode Base64 strings, URL-safe Base64, and images instantly in your browser. No server required. Supports UTF-8 text, drag & drop image upload, and data URL output.",
   keywords: [
