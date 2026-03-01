@@ -80,6 +80,10 @@ Always dark — no light mode toggle.
 ## Routes
 
 - `/` — Homepage with `TerminalHero` + features section
+- `/about` — About page (PSWK DEV 팀 소개, 미션)
+- `/contact` — Contact page (이메일 + 버그 리포트 가이드)
+- `/privacy-policy` — Privacy Policy (AdSense 필수)
+- `/terms` — Terms of Service
 - `/tools/json-formatter` — JSON Formatter & Validator (완료)
 - `/tools/regex-tester` — Regex Tester (완료)
 - `/tools/text-diff` — Text Diff Tool (완료)
@@ -101,10 +105,17 @@ Always dark — no light mode toggle.
 1. **UUID Generator** (`/tools/uuid-generator`)
 2. **Hash Generator** (`/tools/hash-generator`)
 
+AdSense 심사 대응 완료 (2026-03-01):
+- `/about`, `/contact`, `/privacy-policy`, `/terms` 페이지 추가
+- `components/layout/footer.tsx` 추가 (app/layout.tsx에 포함)
+- 각 도구 페이지 하단에 교육용 설명 섹션 추가
+- `public/ads.txt` 생성 (publisher ID 교체 필요)
+
 ## Components
 
 - `components/hero/terminal-hero.tsx` — **Client**, typewriter animation + tool CTA buttons
 - `components/layout/navbar.tsx` — Fixed top navbar (server)
+- `components/layout/footer.tsx` — **Client**, site-wide footer (About/Contact/Privacy/Terms 링크, © 2026 PSWK DEV)
 - `components/layout/tool-nav-sidebar.tsx` — Tool navigation sidebar (server)
 - `components/tools/json-formatter/json-formatter-client.tsx` — **Client**, JSON formatter (jsonrepair)
 - `components/tools/regex-tester/regex-tester-client.tsx` — **Client**, Regex tester
