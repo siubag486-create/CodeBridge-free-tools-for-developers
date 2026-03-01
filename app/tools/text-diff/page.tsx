@@ -246,6 +246,18 @@ export default function TextDiffPage() {
             >
               View Modes
             </h2>
+            <p
+              style={{
+                fontFamily: monoFont,
+                fontSize: "0.82rem",
+                color: "var(--comment-gray)",
+                lineHeight: 1.85,
+                marginBottom: "16px",
+                maxWidth: "720px",
+              }}
+            >
+              Most diff tools offer two ways to display changes, and the best choice depends on the size and nature of your edit. Split view gives you spatial context by placing original and modified side by side — ideal when you need to see the before and after at the same time. Unified view is more compact, merging both versions into a single column in the same format you&apos;ll see in Git commit histories and pull request reviews on GitHub or GitLab.
+            </p>
             <div
               style={{
                 display: "grid",
@@ -312,6 +324,18 @@ export default function TextDiffPage() {
             >
               Common Use Cases
             </h2>
+            <p
+              style={{
+                fontFamily: monoFont,
+                fontSize: "0.82rem",
+                color: "var(--comment-gray)",
+                lineHeight: 1.85,
+                marginBottom: "16px",
+                maxWidth: "720px",
+              }}
+            >
+              A diff tool is useful whenever you need to understand exactly what changed between two versions of any text-based content. While most commonly associated with source code, developers reach for it across a wide range of everyday tasks — from auditing config changes before a deployment to proofreading a document revision. The unifying theme is always the same: you have two versions of something and you need to know precisely what is different.
+            </p>
             <div
               style={{
                 border: "1px solid rgba(88,166,255,0.12)",
@@ -356,6 +380,18 @@ export default function TextDiffPage() {
             >
               How to Read a Diff
             </h2>
+            <p
+              style={{
+                fontFamily: monoFont,
+                fontSize: "0.82rem",
+                color: "var(--comment-gray)",
+                lineHeight: 1.85,
+                marginBottom: "16px",
+                maxWidth: "720px",
+              }}
+            >
+              If you&apos;re new to reading diffs, the format can look noisy at first glance. Once you learn the three symbols — <code style={{ color: "var(--terminal-green)", fontFamily: monoFont, opacity: 0.85 }}>+</code> for added, <code style={{ color: "rgba(255,100,100,0.8)", fontFamily: monoFont }}>-</code> for removed, and a plain space for unchanged — you can parse any diff output instantly, whether it comes from this tool, a Git pull request, or a patch file shared by a colleague. The example below uses the same unified format Git uses internally.
+            </p>
             <div
               style={{
                 border: "1px solid rgba(0,255,136,0.1)",

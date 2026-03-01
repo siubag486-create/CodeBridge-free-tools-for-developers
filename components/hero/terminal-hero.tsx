@@ -282,6 +282,42 @@ export default function TerminalHero() {
           0%   { transform: translateY(-100%); }
           100% { transform: translateY(110vh); }
         }
+        .tool-btn {
+          border-left: 3px solid transparent;
+          transition: border-left-color 0.15s ease, background 0.15s ease;
+          cursor: pointer;
+        }
+        .tool-btn:hover {
+          border-left-color: #00ff88;
+          background: rgba(0,255,136,0.09);
+        }
+        .tool-btn:hover .tool-icon {
+          background: #00ff88;
+          color: #060d0a;
+          border-color: #00ff88;
+        }
+        .tool-btn:hover .tool-cmd {
+          color: #ffffff;
+        }
+        .tool-btn:hover .tool-desc {
+          color: rgba(255,255,255,0.5);
+        }
+        .tool-btn:hover .tool-arrow {
+          transform: translateX(5px);
+          color: #00ff88;
+        }
+        .tool-arrow {
+          transition: transform 0.15s ease, color 0.15s ease;
+        }
+        .tool-icon {
+          transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+        }
+        .tool-cmd {
+          transition: color 0.15s ease;
+        }
+        .tool-desc {
+          transition: color 0.15s ease;
+        }
       `}</style>
       <section
         className="min-h-screen flex flex-col items-center relative overflow-hidden"
@@ -523,8 +559,7 @@ export default function TerminalHero() {
                   {subtitle.displayed && (
                     <div
                       style={{
-                        fontFamily:
-                          "var(--font-space-mono), monospace",
+                        fontFamily: "var(--font-space-mono), monospace",
                         fontSize: "clamp(1rem, 2vw, 1.35rem)",
                         fontWeight: 700,
                         color: "var(--electric-blue)",
@@ -532,7 +567,9 @@ export default function TerminalHero() {
                         letterSpacing: "0.08em",
                       }}
                     >
-                      <span style={{ color: "var(--code-comment)" }}>{"// "}</span>
+                      <span style={{ color: "var(--code-comment)" }}>
+                        {"// "}
+                      </span>
                       {subtitle.displayed}
                       {!subtitle.done && (
                         <span
@@ -578,7 +615,7 @@ export default function TerminalHero() {
 
           {/* CTA below terminal */}
           {showCta && (
-            <div className="animate-fade-up mt-25 flex flex-col items-center gap-6">
+            <div className="animate-fade-up mt-15 flex flex-col items-center gap-6">
               <p
                 style={{
                   fontFamily:
@@ -596,148 +633,155 @@ export default function TerminalHero() {
                 </span>
               </p>
 
-              {/* Tool buttons */}
+              {/* Tool list — terminal button style */}
               <div
                 style={{
-                  display: "grid",
-                  gridTemplateColumns: "repeat(3, 180px)",
-                  gap: "12px",
-                  justifyContent: "center",
+                  width: "100%",
+                  maxWidth: "600px",
+                  backgroundColor: "rgba(10, 14, 26, 0.92)",
+                  border: "1px solid rgba(0,255,136,0.18)",
+                  borderRadius: "8px",
+                  overflow: "hidden",
+                  fontFamily: "var(--font-geist-mono), monospace",
                 }}
               >
-                {/* JSON Formatter — active */}
-                <a
-                  href="/tools/json-formatter"
+                {/* mini titlebar */}
+                <div
                   style={{
-                    fontFamily: "var(--font-geist-mono), monospace",
-                    padding: "12px 8px",
-                    borderRadius: "8px",
-                    textDecoration: "none",
+                    borderBottom: "1px solid rgba(0,255,136,0.1)",
+                    padding: "8px 16px",
+                    fontSize: "0.7rem",
+                    color: "#3a4a5a",
                     display: "flex",
-                    flexDirection: "column",
                     alignItems: "center",
-                    justifyContent: "center",
-                    gap: "3px",
-                    border: "1px solid rgba(0,255,136,0.35)",
-                    backgroundColor: "rgba(0,255,136,0.07)",
-                    color: "var(--terminal-green)",
-                    transition: "all 0.2s",
+                    gap: "8px",
                   }}
-                  className="hover:bg-[rgba(0,255,136,0.14)] hover:shadow-[0_0_20px_rgba(0,255,136,0.15)]"
                 >
-                  <span style={{ display: "flex", alignItems: "center", gap: "6px", fontSize: "0.8rem", letterSpacing: "0.03em" }}>
-                    <span style={{ opacity: 0.6, fontSize: "0.66rem" }}>$</span>
-                    JSON Formatter
+                  <span
+                    style={{ color: "var(--terminal-green)", opacity: 0.45 }}
+                  >
+                    $
                   </span>
-                  <span style={{ fontSize: "0.72rem", opacity: 0.6, letterSpacing: "0.04em" }}>&amp; Validator</span>
-                </a>
+                  codebridge --list-tools
+                </div>
+                {[
+                  {
+                    icon: "{ }",
+                    cmd: "json-formatter",
+                    desc: "Format & validate JSON",
+                    href: "/tools/json-formatter",
+                  },
+                  {
+                    icon: "/^/",
+                    cmd: "regex-tester",
+                    desc: "Test regex patterns in realtime",
+                    href: "/tools/regex-tester",
+                  },
+                  {
+                    icon: "+/-",
+                    cmd: "text-diff",
+                    desc: "Compare two texts side-by-side",
+                    href: "/tools/text-diff",
+                  },
+                  {
+                    icon: " 64",
+                    cmd: "base64",
+                    desc: "Encode / decode Base64",
+                    href: "/tools/base64",
+                  },
+                  {
+                    icon: "JWT",
+                    cmd: "jwt-decoder",
+                    desc: "Decode & verify JWT tokens",
+                    href: "/tools/jwt-decoder",
+                  },
+                ].map((tool, i, arr) => (
+                  <a
+                    key={tool.cmd}
+                    href={tool.href}
+                    className="tool-btn"
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      padding: "12px 16px",
+                      textDecoration: "none",
+                      gap: "12px",
+                      borderBottom:
+                        i < arr.length - 1
+                          ? "1px solid rgba(0,255,136,0.06)"
+                          : "none",
+                    }}
+                  >
+                    {/* Icon badge */}
+                    <span
+                      className="tool-icon"
+                      style={{
+                        display: "inline-flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        width: "36px",
+                        height: "26px",
+                        border: "1px solid rgba(0,255,136,0.28)",
+                        borderRadius: "4px",
+                        fontSize: "0.62rem",
+                        color: "var(--terminal-green)",
+                        flexShrink: 0,
+                        letterSpacing: "0",
+                        fontWeight: 600,
+                      }}
+                    >
+                      {tool.icon}
+                    </span>
 
-                {/* Regex Tester — active */}
-                <a
-                  href="/tools/regex-tester"
-                  style={{
-                    fontFamily: "var(--font-geist-mono), monospace",
-                    padding: "12px 8px",
-                    borderRadius: "8px",
-                    textDecoration: "none",
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    gap: "3px",
-                    border: "1px solid rgba(0,255,136,0.35)",
-                    backgroundColor: "rgba(0,255,136,0.07)",
-                    color: "var(--terminal-green)",
-                    transition: "all 0.2s",
-                  }}
-                  className="hover:bg-[rgba(0,255,136,0.14)] hover:shadow-[0_0_20px_rgba(0,255,136,0.15)]"
-                >
-                  <span style={{ display: "flex", alignItems: "center", gap: "6px", fontSize: "0.8rem", letterSpacing: "0.03em" }}>
-                    <span style={{ opacity: 0.6, fontSize: "0.66rem" }}>$</span>
-                    Regex Tester
-                  </span>
-                </a>
+                    {/* $ prefix */}
+                    <span
+                      style={{
+                        color: "rgba(0,255,136,0.35)",
+                        fontSize: "0.75rem",
+                        flexShrink: 0,
+                      }}
+                    >
+                      $
+                    </span>
 
-                {/* Text Diff — active */}
-                <a
-                  href="/tools/text-diff"
-                  style={{
-                    fontFamily: "var(--font-geist-mono), monospace",
-                    padding: "12px 8px",
-                    borderRadius: "8px",
-                    textDecoration: "none",
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    gap: "3px",
-                    border: "1px solid rgba(0,255,136,0.35)",
-                    backgroundColor: "rgba(0,255,136,0.07)",
-                    color: "var(--terminal-green)",
-                    transition: "all 0.2s",
-                  }}
-                  className="hover:bg-[rgba(0,255,136,0.14)] hover:shadow-[0_0_20px_rgba(0,255,136,0.15)]"
-                >
-                  <span style={{ display: "flex", alignItems: "center", gap: "6px", fontSize: "0.8rem", letterSpacing: "0.03em" }}>
-                    <span style={{ opacity: 0.6, fontSize: "0.66rem" }}>$</span>
-                    Text Diff
-                  </span>
-                </a>
+                    {/* Command name */}
+                    <span
+                      className="tool-cmd"
+                      style={{
+                        color: "var(--terminal-green)",
+                        fontSize: "0.85rem",
+                        minWidth: "145px",
+                        letterSpacing: "0.02em",
+                      }}
+                    >
+                      {tool.cmd}
+                    </span>
 
-                {/* Base64 — active */}
-                <a
-                  href="/tools/base64"
-                  style={{
-                    fontFamily: "var(--font-geist-mono), monospace",
-                    padding: "12px 8px",
-                    borderRadius: "8px",
-                    textDecoration: "none",
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    gap: "3px",
-                    border: "1px solid rgba(0,255,136,0.35)",
-                    backgroundColor: "rgba(0,255,136,0.07)",
-                    color: "var(--terminal-green)",
-                    transition: "all 0.2s",
-                  }}
-                  className="hover:bg-[rgba(0,255,136,0.14)] hover:shadow-[0_0_20px_rgba(0,255,136,0.15)]"
-                >
-                  <span style={{ display: "flex", alignItems: "center", gap: "6px", fontSize: "0.8rem", letterSpacing: "0.03em" }}>
-                    <span style={{ opacity: 0.6, fontSize: "0.66rem" }}>$</span>
-                    Base64
-                  </span>
-                  <span style={{ fontSize: "0.72rem", opacity: 0.6, letterSpacing: "0.04em" }}>Encoder / Decoder</span>
-                </a>
+                    {/* Description */}
+                    <span
+                      className="tool-desc"
+                      style={{
+                        color: "var(--comment-gray)",
+                        fontSize: "0.78rem",
+                        flex: 1,
+                      }}
+                    >
+                      # {tool.desc}
+                    </span>
 
-                {/* JWT Decoder — active */}
-                <a
-                  href="/tools/jwt-decoder"
-                  style={{
-                    fontFamily: "var(--font-geist-mono), monospace",
-                    padding: "12px 8px",
-                    borderRadius: "8px",
-                    textDecoration: "none",
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    gap: "3px",
-                    border: "1px solid rgba(0,255,136,0.35)",
-                    backgroundColor: "rgba(0,255,136,0.07)",
-                    color: "var(--terminal-green)",
-                    transition: "all 0.2s",
-                  }}
-                  className="hover:bg-[rgba(0,255,136,0.14)] hover:shadow-[0_0_20px_rgba(0,255,136,0.15)]"
-                >
-                  <span style={{ display: "flex", alignItems: "center", gap: "6px", fontSize: "0.8rem", letterSpacing: "0.03em" }}>
-                    <span style={{ opacity: 0.6, fontSize: "0.66rem" }}>$</span>
-                    JWT Inspector
-                  </span>
-                  <span style={{ fontSize: "0.72rem", opacity: 0.6, letterSpacing: "0.04em" }}>Decoder &amp; Verifier</span>
-                </a>
-
+                    {/* Arrow */}
+                    <span
+                      className="tool-arrow"
+                      style={{
+                        color: "rgba(0,255,136,0.25)",
+                        fontSize: "0.9rem",
+                        flexShrink: 0,
+                      }}
+                    >
+                      →
+                    </span>
+                  </a>
+                ))}
               </div>
             </div>
           )}

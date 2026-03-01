@@ -318,6 +318,18 @@ export default function Base64Page() {
             >
               Standard vs URL-Safe Base64
             </h2>
+            <p
+              style={{
+                fontFamily: monoFont,
+                fontSize: "0.82rem",
+                color: "var(--comment-gray)",
+                lineHeight: 1.85,
+                marginBottom: "16px",
+                maxWidth: "720px",
+              }}
+            >
+              Not all Base64 is the same. Standard Base64 uses two characters — <code style={{ color: "rgba(255,255,255,0.5)", fontFamily: monoFont }}>+</code> and <code style={{ color: "rgba(255,255,255,0.5)", fontFamily: monoFont }}>/</code> — that have reserved meanings in URLs. If you place a standard Base64 string directly into a URL query parameter, those characters will be misinterpreted by browsers and servers. URL-Safe Base64 solves this by replacing them with <code style={{ color: "rgba(255,255,255,0.5)", fontFamily: monoFont }}>-</code> and <code style={{ color: "rgba(255,255,255,0.5)", fontFamily: monoFont }}>_</code>, making the encoded string safe to use anywhere a URL can appear — including JWT tokens, OAuth state parameters, and filename-safe identifiers.
+            </p>
             <div
               style={{
                 border: "1px solid rgba(88,166,255,0.12)",
@@ -396,6 +408,18 @@ export default function Base64Page() {
             >
               Common Use Cases
             </h2>
+            <p
+              style={{
+                fontFamily: monoFont,
+                fontSize: "0.82rem",
+                color: "var(--comment-gray)",
+                lineHeight: 1.85,
+                marginBottom: "16px",
+                maxWidth: "720px",
+              }}
+            >
+              Base64 encoding appears in more places in web development than most developers realize. Because it converts any binary data into a sequence of printable ASCII characters, it acts as a universal adapter — letting images, files, and credentials travel through systems that were originally designed only for text. You&apos;ll encounter it in HTTP headers, JSON payloads, CSS stylesheets, and authentication protocols.
+            </p>
             <div
               style={{
                 display: "grid",

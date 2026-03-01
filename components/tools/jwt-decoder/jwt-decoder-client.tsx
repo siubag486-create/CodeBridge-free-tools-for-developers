@@ -1420,7 +1420,7 @@ export default function JwtDecoderClient() {
             letterSpacing: "0.06em",
           }}
         >
-          jwt — inspector
+          jwt — decoder
         </span>
       </div>
 

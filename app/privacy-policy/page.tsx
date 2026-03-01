@@ -139,7 +139,7 @@ export default function PrivacyPolicyPage() {
           </p>
           <p style={{ marginBottom: "10px" }}>
             All tools on CodeBridge (JSON Formatter, Regex Tester, Text Diff,
-            Base64, JWT Inspector) run{" "}
+            Base64, JWT Decoder) run{" "}
             <strong style={{ color: "rgba(255,255,255,0.7)" }}>
               entirely in your browser
             </strong>

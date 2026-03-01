@@ -112,7 +112,7 @@ export default function ContactPage() {
             // Email
           </p>
           <a
-            href="mailto:codebridge.contact@gmail.com"
+            href="mailto:siubag486@gmail.com"
             style={{
               fontFamily: monoFont,
               fontSize: "1rem",
@@ -121,7 +121,7 @@ export default function ContactPage() {
               letterSpacing: "-0.01em",
             }}
           >
-            codebridge.contact@gmail.com
+            siubag486@gmail.com
           </a>
           <p
             style={{
@@ -170,11 +170,27 @@ export default function ContactPage() {
                 whiteSpace: "pre-wrap",
               }}
             >
-              <span style={{ color: "var(--terminal-green)", opacity: 0.7 }}>-</span>{" Which tool you were using\n"}
-              <span style={{ color: "var(--terminal-green)", opacity: 0.7 }}>-</span>{" Steps to reproduce the issue\n"}
-              <span style={{ color: "var(--terminal-green)", opacity: 0.7 }}>-</span>{" Browser name and version\n"}
-              <span style={{ color: "var(--terminal-green)", opacity: 0.7 }}>-</span>{" Expected vs actual behavior\n"}
-              <span style={{ color: "rgba(88,166,255,0.5)", fontSize: "0.68rem" }}>{"* Screenshots or sample data are always helpful"}</span>
+              <span style={{ color: "var(--terminal-green)", opacity: 0.7 }}>
+                -
+              </span>
+              {" Which tool you were using\n"}
+              <span style={{ color: "var(--terminal-green)", opacity: 0.7 }}>
+                -
+              </span>
+              {" Steps to reproduce the issue\n"}
+              <span style={{ color: "var(--terminal-green)", opacity: 0.7 }}>
+                -
+              </span>
+              {" Browser name and version\n"}
+              <span style={{ color: "var(--terminal-green)", opacity: 0.7 }}>
+                -
+              </span>
+              {" Expected vs actual behavior\n"}
+              <span
+                style={{ color: "rgba(88,166,255,0.5)", fontSize: "0.68rem" }}
+              >
+                {"* Screenshots or sample data are always helpful"}
+              </span>
             </pre>
           </div>
         </section>

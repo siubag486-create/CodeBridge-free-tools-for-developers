@@ -59,12 +59,14 @@ This is a **Next.js 16 App Router** project using:
 Always dark — no light mode toggle.
 
 **CRT Terminal Theme:**
+
 - `--terminal-bg: #0a0e1a` — page background
 - `--terminal-green: #00ff88` — primary accent
 - `--electric-blue: #58a6ff` — secondary accent
 - `--comment-gray: #6e7681` — muted text
 
 **Custom CSS utilities** (defined in `app/globals.css`):
+
 - `.crt-scanlines` — scanline overlay effect
 - `.terminal-glow` — green glow box-shadow
 - `.text-glow-green` — text shadow for headings
@@ -95,17 +97,15 @@ Always dark — no light mode toggle.
 ## Tools Roadmap
 
 개발 완료:
+
 - **JSON Formatter** (`/tools/json-formatter`) — 포맷/검증/Auto-fix/Minify, Tree view (expand/collapse, path copy, search), Diff view
 - **Regex Tester** (`/tools/regex-tester`) — 실시간 매칭 하이라이트, 플래그 토글, 캡처 그룹 표시, ₩→\\ 자동변환
 - **Text Diff** (`/tools/text-diff`) — Split/Unified view, 라인별 diff, 공백 무시 옵션, 괄호 그룹 단위 인라인 diff (paren-aware tokenizer + diffArrays), Unified view 전체 추가/삭제 줄 mark 하이라이트
 - **Base64** (`/tools/base64`) — Text/URL Safe/Image 3탭, 브라우저 내장 btoa/atob 사용 (외부 패키지 없음)
 - **JWT Inspector** (`/tools/jwt-decoder`) — Header/Payload/Signature 분리, exp 라이브 카운트다운, alg:none 보안 경고, HS256/384/512 HMAC 검증 + RS256/384/512·PS256/384/512·ES256/384/512 비대칭 PEM 공개키 검증 (Web Crypto API, 외부 라이브러리 없음)
 
-개발 예정 (순서대로):
-1. **UUID Generator** (`/tools/uuid-generator`)
-2. **Hash Generator** (`/tools/hash-generator`)
-
 AdSense 심사 대응 완료 (2026-03-01):
+
 - `/about`, `/contact`, `/privacy-policy`, `/terms` 페이지 추가
 - `components/layout/footer.tsx` 추가 (app/layout.tsx에 포함)
 - 각 도구 페이지 하단에 교육용 설명 섹션 추가

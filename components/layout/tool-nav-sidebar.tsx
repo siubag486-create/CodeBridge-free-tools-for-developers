@@ -7,7 +7,7 @@ const tools = [
   { id: "regex-tester",   label: "regex-tester",   desc: "Pattern Matching" },
   { id: "text-diff",      label: "text-diff",       desc: "Compare Texts"   },
   { id: "base64",         label: "base64",           desc: "Encode / Decode" },
-  { id: "jwt-decoder",    label: "jwt-decoder",     desc: "Token Inspector" },
+  { id: "jwt-decoder",    label: "jwt-decoder",     desc: "Token Decoder" },
 ];
 
 export default function ToolNavSidebar({ currentTool }: { currentTool: string }) {

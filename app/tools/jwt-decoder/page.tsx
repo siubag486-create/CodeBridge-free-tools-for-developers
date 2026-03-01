@@ -3,7 +3,7 @@ import JwtDecoderClient from "@/components/tools/jwt-decoder/jwt-decoder-client"
 import ToolNavSidebar from "@/components/layout/tool-nav-sidebar";
 
 export const metadata: Metadata = {
-  title: "JWT Inspector — Free Online JWT Decoder & Verifier | CodeBridge",
+  title: "JWT Decoder — Free Online JWT Decoder & Verifier | CodeBridge",
   description:
     "Decode and inspect JWT tokens instantly. View Header, Payload, and Signature with live expiry countdown. Verify HMAC signatures with your secret key. Runs entirely in your browser — zero server calls.",
   keywords: [
@@ -94,7 +94,7 @@ export default function JwtDecoderPage() {
               >
                 JWT{" "}
                 <span style={{ color: "var(--code-comment)", fontWeight: 400 }}>
-                  Inspector
+                  Decoder
                 </span>
               </h1>
 
@@ -261,6 +261,18 @@ export default function JwtDecoderPage() {
             >
               Three-Part Structure
             </h2>
+            <p
+              style={{
+                fontFamily: monoFont,
+                fontSize: "0.82rem",
+                color: "var(--comment-gray)",
+                lineHeight: 1.85,
+                marginBottom: "16px",
+                maxWidth: "720px",
+              }}
+            >
+              Every JWT is made up of exactly three parts separated by dots. This structure is not arbitrary — each part serves a distinct security purpose. Understanding what belongs in each section, and crucially what should never be placed there, is the foundation of using JWTs safely in production. A common misconception is that Base64-encoding the payload provides some protection; it does not — the payload is trivially decodable by anyone who holds the token.
+            </p>
             <div
               style={{
                 display: "grid",
@@ -361,6 +373,18 @@ export default function JwtDecoderPage() {
             >
               Standard Claims (Registered)
             </h2>
+            <p
+              style={{
+                fontFamily: monoFont,
+                fontSize: "0.82rem",
+                color: "var(--comment-gray)",
+                lineHeight: 1.85,
+                marginBottom: "16px",
+                maxWidth: "720px",
+              }}
+            >
+              The JWT specification defines a set of reserved claim names with well-known meanings across all JWT libraries and services. Using these standard claims — rather than inventing your own field names — ensures interoperability with any framework that validates tokens. Of these, <code style={{ color: "var(--terminal-green)", fontFamily: monoFont, opacity: 0.85 }}>exp</code> is the most critical: a token without an expiry can never be invalidated short of rotating your entire signing secret, which is a serious operational problem in production systems.
+            </p>
             <div
               style={{
                 border: "1px solid rgba(88,166,255,0.12)",
@@ -443,6 +467,18 @@ export default function JwtDecoderPage() {
             >
               Signing Algorithms
             </h2>
+            <p
+              style={{
+                fontFamily: monoFont,
+                fontSize: "0.82rem",
+                color: "var(--comment-gray)",
+                lineHeight: 1.85,
+                marginBottom: "16px",
+                maxWidth: "720px",
+              }}
+            >
+              The algorithm you choose determines who can verify the token and what key material is required. Symmetric algorithms like HS256 use the same secret for both signing and verification — simple and fast, but every service that needs to validate tokens must share that secret. Asymmetric algorithms like RS256 and ES256 split this responsibility: only the issuer holds the private key, while any downstream service can verify tokens using only the public key, without ever having access to the signing secret.
+            </p>
             <div
               style={{
                 display: "grid",
@@ -532,6 +568,18 @@ export default function JwtDecoderPage() {
             >
               Security Considerations
             </h2>
+            <p
+              style={{
+                fontFamily: monoFont,
+                fontSize: "0.82rem",
+                color: "var(--comment-gray)",
+                lineHeight: 1.85,
+                marginBottom: "16px",
+                maxWidth: "720px",
+              }}
+            >
+              JWTs are widely misused from a security perspective. Because decoding a token is trivial — it&apos;s just Base64 — developers sometimes assume the encoding provides confidentiality. It does not. The security of a JWT comes entirely from its signature, and only if the server validates that signature correctly on every single request. Skipping even one validation step opens the door to token forgery, privilege escalation, and session hijacking. These are the vulnerabilities that come up most often in real-world security audits and bug bounty reports.
+            </p>
             <div
               style={{
                 border: "1px solid rgba(255,100,100,0.18)",

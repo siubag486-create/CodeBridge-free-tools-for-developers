@@ -134,7 +134,7 @@ export default function TermsPage() {
           <p>
             CodeBridge provides free, browser-based developer utility tools
             including JSON Formatter, Regex Tester, Text Diff, Base64
-            Encoder/Decoder, JWT Inspector, and other tools. All processing
+            Encoder/Decoder, JWT Decoder, and other tools. All processing
             occurs locally in your browser. We do not store, transmit, or
             process any user-submitted data on our servers.
           </p>

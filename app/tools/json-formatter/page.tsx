@@ -266,6 +266,18 @@ export default function JsonFormatterPage() {
             >
               JSON Data Types with Examples
             </h2>
+            <p
+              style={{
+                fontFamily: monoFont,
+                fontSize: "0.82rem",
+                color: "var(--comment-gray)",
+                lineHeight: 1.85,
+                marginBottom: "16px",
+                maxWidth: "720px",
+              }}
+            >
+              JSON supports exactly six data types, and every value in a document must be one of them. Understanding these types is essential because strict parsers will reject anything that doesn&apos;t conform — using JavaScript&apos;s <code style={{ color: "rgba(255,255,255,0.5)", fontFamily: monoFont }}>undefined</code>, Python&apos;s <code style={{ color: "rgba(255,255,255,0.5)", fontFamily: monoFont }}>None</code>, or a raw <code style={{ color: "rgba(255,255,255,0.5)", fontFamily: monoFont }}>Date</code> object will all cause parse failures. Below is a complete breakdown with examples and the common gotchas for each type.
+            </p>
             <div
               style={{
                 border: "1px solid rgba(88,166,255,0.12)",
@@ -346,6 +358,18 @@ export default function JsonFormatterPage() {
             >
               Valid JSON Rules & Common Mistakes
             </h2>
+            <p
+              style={{
+                fontFamily: monoFont,
+                fontSize: "0.82rem",
+                color: "var(--comment-gray)",
+                lineHeight: 1.85,
+                marginBottom: "16px",
+                maxWidth: "720px",
+              }}
+            >
+              JSON has a deliberately minimal and strict syntax. While that makes parsers easy to implement, it also means small mistakes — a trailing comma after the last item, a single-quoted string, or an inline comment — will cause the entire document to fail validation. These are the errors that come up most often when copying JSON from browser DevTools, log files, or configuration templates.
+            </p>
             <div
               style={{
                 display: "grid",
@@ -462,6 +486,18 @@ export default function JsonFormatterPage() {
             >
               JSON vs XML vs YAML
             </h2>
+            <p
+              style={{
+                fontFamily: monoFont,
+                fontSize: "0.82rem",
+                color: "var(--comment-gray)",
+                lineHeight: 1.85,
+                marginBottom: "16px",
+                maxWidth: "720px",
+              }}
+            >
+              JSON didn&apos;t emerge in a vacuum — it was designed as a lighter alternative to XML and has since been joined by YAML as another human-friendly format. The right choice depends on context: REST APIs favour JSON for its compact size and native browser support, CI/CD pipelines favour YAML for its readability and comment support, and enterprise integrations sometimes still require XML for its schema validation and namespace capabilities.
+            </p>
             <div
               style={{
                 border: "1px solid rgba(88,166,255,0.12)",
@@ -535,6 +571,18 @@ export default function JsonFormatterPage() {
             >
               Key Features of This Tool
             </h2>
+            <p
+              style={{
+                fontFamily: monoFont,
+                fontSize: "0.82rem",
+                color: "var(--comment-gray)",
+                lineHeight: 1.85,
+                marginBottom: "16px",
+                maxWidth: "720px",
+              }}
+            >
+              This formatter was built to handle the real-world messiness of JSON — not just well-formed inputs. Whether you&apos;re debugging a malformed API response, exploring a deeply nested structure, or comparing two versions of a config file, every feature here is designed to reduce the time between &quot;something is wrong&quot; and &quot;now I understand it.&quot;
+            </p>
             <div
               style={{
                 display: "grid",

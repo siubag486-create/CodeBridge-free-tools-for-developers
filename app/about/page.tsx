@@ -167,7 +167,7 @@ export default function AboutPage() {
                 desc: "Text, URL-safe, and image Base64 encoding/decoding",
               },
               {
-                name: "JWT Inspector",
+                name: "JWT Decoder",
                 desc: "Decode JWTs, verify signatures, and monitor expiry live",
               },
             ].map(({ name, desc }) => (

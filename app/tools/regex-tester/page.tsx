@@ -217,6 +217,18 @@ export default function RegexTesterPage() {
             >
               Common Patterns
             </h2>
+            <p
+              style={{
+                fontFamily: monoFont,
+                fontSize: "0.82rem",
+                color: "var(--comment-gray)",
+                lineHeight: 1.85,
+                marginBottom: "16px",
+                maxWidth: "720px",
+              }}
+            >
+              Rather than memorizing the full regex syntax upfront, most real-world tasks can be solved by combining a small set of recurring building blocks. The patterns below cover the vast majority of day-to-day use cases — from extracting numbers and words to matching boundaries and whitespace. Once these become second nature, you can compose them to handle increasingly complex patterns.
+            </p>
             <div
               style={{
                 border: "1px solid rgba(88,166,255,0.12)",
@@ -284,6 +296,18 @@ export default function RegexTesterPage() {
             >
               Flags
             </h2>
+            <p
+              style={{
+                fontFamily: monoFont,
+                fontSize: "0.82rem",
+                color: "var(--comment-gray)",
+                lineHeight: 1.85,
+                marginBottom: "16px",
+                maxWidth: "720px",
+              }}
+            >
+              A regex pattern on its own only matches exactly what it describes. Flags change how the entire expression behaves — whether matching is case-sensitive, whether it finds all occurrences or just the first, and how line boundaries are interpreted. Using the wrong flag (or forgetting the <code style={{ color: "rgba(255,255,255,0.5)", fontFamily: monoFont }}>g</code> flag when you expect multiple results) is one of the most common sources of subtle regex bugs.
+            </p>
             <div
               style={{
                 display: "grid",
@@ -356,6 +380,18 @@ export default function RegexTesterPage() {
             >
               Quantifiers
             </h2>
+            <p
+              style={{
+                fontFamily: monoFont,
+                fontSize: "0.82rem",
+                color: "var(--comment-gray)",
+                lineHeight: 1.85,
+                marginBottom: "16px",
+                maxWidth: "720px",
+              }}
+            >
+              Quantifiers control how many times the preceding token must appear for a match to succeed. The distinction between greedy and lazy matching is especially important: greedy quantifiers consume as much input as possible, which can cause a pattern to match far more than you intend — a classic pitfall when parsing HTML or extracting content between delimiters. Adding <code style={{ color: "rgba(255,255,255,0.5)", fontFamily: monoFont }}>?</code> after any quantifier switches it to lazy mode, matching as little as possible instead.
+            </p>
             <div
               style={{
                 border: "1px solid rgba(88,166,255,0.12)",
@@ -423,6 +459,18 @@ export default function RegexTesterPage() {
             >
               Groups & Anchors
             </h2>
+            <p
+              style={{
+                fontFamily: monoFont,
+                fontSize: "0.82rem",
+                color: "var(--comment-gray)",
+                lineHeight: 1.85,
+                marginBottom: "16px",
+                maxWidth: "720px",
+              }}
+            >
+              Groups and anchors are what elevate regex from simple pattern matching to a structured data extraction tool. Capturing groups let you isolate specific parts of a match — pulling just the domain from an email address, or the version number from a release string — while anchors constrain where in the input a match is allowed to occur. Lookaheads and lookbehinds take this further, letting you write conditions like &quot;followed by&quot; or &quot;preceded by&quot; without those surrounding characters becoming part of the match result.
+            </p>
             <div
               style={{
                 display: "grid",
@@ -529,6 +577,18 @@ export default function RegexTesterPage() {
             >
               Real-World Regex Examples
             </h2>
+            <p
+              style={{
+                fontFamily: monoFont,
+                fontSize: "0.82rem",
+                color: "var(--comment-gray)",
+                lineHeight: 1.85,
+                marginBottom: "16px",
+                maxWidth: "720px",
+              }}
+            >
+              The fastest way to internalize regex is through practical examples that map to problems you&apos;ve already encountered. The patterns below cover recurring validation and extraction tasks in web development, scripting, and data processing — email validation, IP addresses, URL parsing, date formats, and more. Each one can be copied directly into the tester above and modified to fit your specific requirements.
+            </p>
             <div
               style={{
                 border: "1px solid rgba(88,166,255,0.12)",
