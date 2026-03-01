@@ -5,7 +5,7 @@ import ToolNavSidebar from "@/components/layout/tool-nav-sidebar";
 export const metadata: Metadata = {
   title: "UUID Generator — Free Online Tool | OmniDev",
   description:
-    "Generate UUID v4 and v1 identifiers instantly in your browser. Bulk generation, uppercase/lowercase, with or without hyphens. No server required.",
+    "Generate UUID v4, v1, and v7 identifiers instantly in your browser. Bulk generation, uppercase/lowercase, with or without hyphens. No server required.",
   keywords: [
     "uuid generator",
     "uuid v4 generator",
@@ -107,7 +107,7 @@ export default function UuidGeneratorPage() {
                   maxWidth: "540px",
                 }}
               >
-                Generate UUID v4 and v1 identifiers{" "}
+                Generate UUID v4, v1, and v7 identifiers{" "}
                 <span style={{ color: "var(--terminal-green)", opacity: 0.8 }}>
                   instantly
                 </span>{" "}
@@ -153,7 +153,7 @@ export default function UuidGeneratorPage() {
                   whiteSpace: "pre",
                 }}
               >
-                <span style={{ color: "var(--terminal-green)", opacity: 0.7 }}>1.</span>{" Select version (v4 or v1)\n"}
+                <span style={{ color: "var(--terminal-green)", opacity: 0.7 }}>1.</span>{" Select version (v4, v1, or v7)\n"}
                 <span style={{ color: "var(--terminal-green)", opacity: 0.7 }}>2.</span>{" Choose how many to generate\n"}
                 <span style={{ color: "var(--terminal-green)", opacity: 0.7 }}>3.</span>{" Set format and hyphen options\n"}
                 <span style={{ color: "var(--terminal-green)", opacity: 0.7 }}>4.</span>{" Click Generate\n"}
@@ -322,10 +322,10 @@ export default function UuidGeneratorPage() {
                       fontSize: "0.78rem",
                       fontWeight: 700,
                       color:
-                        ver === "v4" || ver === "v1"
+                        ver === "v4" || ver === "v1" || ver === "v7"
                           ? "var(--terminal-green)"
                           : "rgba(255,255,255,0.35)",
-                      opacity: ver === "v4" || ver === "v1" ? 0.9 : 0.6,
+                      opacity: ver === "v4" || ver === "v1" || ver === "v7" ? 0.9 : 0.6,
                       minWidth: "24px",
                       flexShrink: 0,
                       paddingTop: "1px",

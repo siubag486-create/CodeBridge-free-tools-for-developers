@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useCallback } from "react";
-import { Copy, Check, Trash2, RefreshCw } from "lucide-react";
+import { Copy, Check, Trash2, RefreshCw, ShieldCheck } from "lucide-react";
 
 const monoFont = "'RoundedFixedsys', var(--font-geist-mono), monospace";
 
@@ -150,6 +150,7 @@ export default function UuidGeneratorClient() {
   const [hyphens, setHyphens] = useState(true);
   const [uuids, setUuids] = useState<string[]>([]);
   const [generated, setGenerated] = useState(false);
+  const [copiedAll, setCopiedAll] = useState(false);
 
   const generate = useCallback(() => {
     const result = Array.from({ length: count }, () =>
@@ -160,13 +161,36 @@ export default function UuidGeneratorClient() {
   }, [version, count, format, hyphens]);
 
   const copyAll = () => {
-    navigator.clipboard.writeText(uuids.join("\n"));
+    navigator.clipboard.writeText(uuids.join("\n")).then(() => {
+      setCopiedAll(true);
+      setTimeout(() => setCopiedAll(false), 1800);
+    });
   };
 
   const COUNTS = [1, 5, 10, 20, 50];
 
   return (
-    <div
+    <div style={{ display: "flex", flexDirection: "column", gap: "14px" }}>
+      {/* Client-side badge */}
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          gap: "6px",
+          padding: "6px 12px",
+          borderRadius: "6px",
+          border: "1px solid rgba(0,255,136,0.15)",
+          backgroundColor: "rgba(0,255,136,0.05)",
+          width: "fit-content",
+        }}
+      >
+        <ShieldCheck size={12} style={{ color: "var(--terminal-green)", flexShrink: 0 }} />
+        <span style={{ fontFamily: monoFont, fontSize: "0.68rem", color: "var(--code-comment)" }}>
+          100% client-side — no data leaves your browser
+        </span>
+      </div>
+
+      <div
       style={{
         border: "1px solid rgba(0,255,136,0.15)",
         borderRadius: "8px",
@@ -196,7 +220,31 @@ export default function UuidGeneratorClient() {
         >
           uuid — generator
         </span>
-        <div style={{ width: "52px" }} />
+        {uuids.length > 0 ? (
+          <button
+            onClick={copyAll}
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: "5px",
+              padding: "4px 10px",
+              border: `1px solid ${copiedAll ? "rgba(0,255,136,0.4)" : "rgba(88,166,255,0.25)"}`,
+              borderRadius: "4px",
+              backgroundColor: copiedAll ? "rgba(0,255,136,0.08)" : "rgba(88,166,255,0.06)",
+              color: copiedAll ? "var(--terminal-green)" : "var(--electric-blue)",
+              fontFamily: monoFont,
+              fontSize: "0.68rem",
+              cursor: "pointer",
+              transition: "all 0.15s",
+              flexShrink: 0,
+            }}
+          >
+            {copiedAll ? <Check size={11} /> : <Copy size={11} />}
+            {copiedAll ? "Copied!" : "Copy All"}
+          </button>
+        ) : (
+          <div style={{ width: "52px" }} />
+        )}
       </div>
 
       {/* Controls */}
@@ -473,25 +521,6 @@ export default function UuidGeneratorClient() {
             {/* Bottom actions */}
             <div style={{ display: "flex", gap: "8px" }}>
               <button
-                onClick={copyAll}
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  gap: "6px",
-                  padding: "6px 14px",
-                  border: "1px solid rgba(88,166,255,0.25)",
-                  borderRadius: "5px",
-                  backgroundColor: "rgba(88,166,255,0.06)",
-                  color: "var(--electric-blue)",
-                  fontFamily: monoFont,
-                  fontSize: "0.72rem",
-                  cursor: "pointer",
-                }}
-              >
-                <Copy size={12} />
-                Copy All
-              </button>
-              <button
                 onClick={() => { setUuids([]); setGenerated(false); }}
                 style={{
                   display: "flex",
@@ -514,6 +543,7 @@ export default function UuidGeneratorClient() {
           </>
         )}
       </div>
+    </div>
     </div>
   );
 }
