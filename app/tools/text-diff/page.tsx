@@ -3,7 +3,7 @@ import TextDiffClient from "@/components/tools/text-diff/text-diff-client";
 import ToolNavSidebar from "@/components/layout/tool-nav-sidebar";
 
 export const metadata: Metadata = {
-  title: "Text Diff Tool — Free Online Comparison | OmniDev",
+  title: "The Best Text Diff Tool — Free, Instant, Secured, No Server | OmniDev",
   description:
     "Compare two texts, code files, or configs with instant line-by-line diff. Split and unified views, syntax highlighting, ignore whitespace. 100% client-side.",
   keywords: [
@@ -13,6 +13,17 @@ export const metadata: Metadata = {
     "diff viewer",
     "online diff tool",
   ],
+  openGraph: {
+    title: "The Best Text Diff Tool — Free, Instant, Secured, No Server | OmniDev",
+    description: "Compare two texts, code files, or configs with instant line-by-line diff. Split and unified views, syntax highlighting, ignore whitespace. 100% client-side.",
+    url: "https://www.omnidevtools.com/tools/text-diff",
+    type: "website",
+    images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "OmniDev Text Diff Tool" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: ["/og-image.jpg"],
+  },
 };
 
 const monoFont = "'RoundedFixedsys', var(--font-geist-mono), monospace";
@@ -28,6 +39,22 @@ export default function TextDiffPage() {
         overflow: "hidden",
       }}
     >
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebApplication",
+            "name": "Text Diff Tool",
+            "description": "Compare two texts, code files, or configs with instant line-by-line diff. Split and unified views, syntax highlighting.",
+            "url": "https://www.omnidevtools.com/tools/text-diff",
+            "image": "https://www.omnidevtools.com/og-image.jpg",
+            "applicationCategory": "DeveloperApplication",
+            "operatingSystem": "Web",
+            "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+          }),
+        }}
+      />
       {/* Grid lines background — matches hero */}
       <div
         className="grid-lines-bg"

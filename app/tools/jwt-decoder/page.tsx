@@ -3,7 +3,7 @@ import JwtDecoderClient from "@/components/tools/jwt-decoder/jwt-decoder-client"
 import ToolNavSidebar from "@/components/layout/tool-nav-sidebar";
 
 export const metadata: Metadata = {
-  title: "JWT Decoder — Free Online JWT Decoder & Verifier | OmniDev",
+  title: "The Best JWT Decoder & Verifier — Free, Instant, Secured, No Server | OmniDev",
   description:
     "Decode and inspect JWT tokens instantly. View Header, Payload, and Signature with live expiry countdown. Verify HMAC signatures with your secret key. Runs entirely in your browser — zero server calls.",
   keywords: [
@@ -15,6 +15,17 @@ export const metadata: Metadata = {
     "jwt expiry checker",
     "hs256 verify",
   ],
+  openGraph: {
+    title: "The Best JWT Decoder & Verifier — Free, Instant, Secured, No Server | OmniDev",
+    description: "Decode and inspect JWT tokens instantly. View Header, Payload, and Signature with live expiry countdown. Verify HMAC signatures. Runs entirely in your browser.",
+    url: "https://www.omnidevtools.com/tools/jwt-decoder",
+    type: "website",
+    images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "OmniDev JWT Decoder" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: ["/og-image.jpg"],
+  },
 };
 
 const monoFont = "'RoundedFixedsys', var(--font-geist-mono), monospace";
@@ -30,6 +41,22 @@ export default function JwtDecoderPage() {
         overflow: "hidden",
       }}
     >
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebApplication",
+            "name": "JWT Decoder & Verifier",
+            "description": "Decode and inspect JWT tokens instantly. View Header, Payload, and Signature with live expiry countdown. Runs entirely in your browser.",
+            "url": "https://www.omnidevtools.com/tools/jwt-decoder",
+            "image": "https://www.omnidevtools.com/og-image.jpg",
+            "applicationCategory": "DeveloperApplication",
+            "operatingSystem": "Web",
+            "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+          }),
+        }}
+      />
       <div
         className="grid-lines-bg"
         style={{

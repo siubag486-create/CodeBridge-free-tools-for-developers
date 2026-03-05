@@ -3,7 +3,7 @@ import UuidGeneratorClient from "@/components/tools/uuid-generator/uuid-generato
 import ToolNavSidebar from "@/components/layout/tool-nav-sidebar";
 
 export const metadata: Metadata = {
-  title: "UUID Generator — Free Online Tool | OmniDev",
+  title: "The Best UUID Generator — Free, Instant, Secured, No Server | OmniDev",
   description:
     "Generate UUID v4, v1, and v7 identifiers instantly in your browser. Bulk generation, uppercase/lowercase, with or without hyphens. No server required.",
   keywords: [
@@ -15,6 +15,17 @@ export const metadata: Metadata = {
     "generate guid",
     "bulk uuid generator",
   ],
+  openGraph: {
+    title: "The Best UUID Generator — Free, Instant, Secured, No Server | OmniDev",
+    description: "Generate UUID v4, v1, and v7 identifiers instantly in your browser. Bulk generation, uppercase/lowercase, with or without hyphens. No server required.",
+    url: "https://www.omnidevtools.com/tools/uuid-generator",
+    type: "website",
+    images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "OmniDev UUID Generator" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: ["/og-image.jpg"],
+  },
 };
 
 const monoFont = "'RoundedFixedsys', var(--font-geist-mono), monospace";
@@ -30,6 +41,22 @@ export default function UuidGeneratorPage() {
         overflow: "hidden",
       }}
     >
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebApplication",
+            "name": "UUID Generator",
+            "description": "Generate UUID v4, v1, and v7 identifiers instantly in your browser. Bulk generation, uppercase/lowercase, with or without hyphens.",
+            "url": "https://www.omnidevtools.com/tools/uuid-generator",
+            "image": "https://www.omnidevtools.com/og-image.jpg",
+            "applicationCategory": "DeveloperApplication",
+            "operatingSystem": "Web",
+            "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+          }),
+        }}
+      />
       <div
         className="grid-lines-bg"
         style={{

@@ -50,9 +50,12 @@ This is a **Next.js 16 App Router** project using:
 
 - `app/` — Next.js App Router pages and layouts
 - `app/globals.css` — Global styles, Tailwind imports, CSS variable tokens
+- `app/sitemap.ts` — 자동 sitemap.xml 생성 (15개 페이지)
+- `app/robots.ts` — 자동 robots.txt 생성
 - `lib/utils.ts` — `cn()` helper
 - `components/ui/` — shadcn/ui generated components (added via CLI)
 - `components/` — Custom application components
+- `public/og-image.jpg` — OG 이미지 (1200×630px, SNS/Google용)
 
 ## Design System
 
@@ -88,6 +91,16 @@ Always dark — no light mode toggle.
 
 - **DungGeunMo** — Korean pixel font, loaded via CDN in `app/layout.tsx`, applied to `body`
 - **Geist Sans / Geist Mono / Space Mono** — via `next/font/google`
+- **Nova Square** — Google Font, hero section "Explore Our Tools" 버튼에 적용 (imported via `@import url()` in terminal-hero.tsx)
+
+## SEO
+
+- **메타데이터 패턴**: `The Best [Tool] — Free, Instant, Secured, No Server | OmniDev`
+- **layout.tsx**: `metadataBase`, openGraph (og:image 포함), twitter card 설정
+- **도구 페이지 9개**: 각 페이지별 openGraph + twitter card + JSON-LD 구조화 데이터 포함
+- **JSON-LD**: `@type: WebApplication`, WebApplication schema, `offers.price: "0"` — Google 검색 이미지 노출용
+- **sitemap.xml**: `app/sitemap.ts` 자동 생성
+- **robots.txt**: `app/robots.ts` 자동 생성
 
 ## Routes
 

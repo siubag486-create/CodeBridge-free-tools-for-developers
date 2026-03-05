@@ -284,6 +284,7 @@ export default function TerminalHero() {
   return (
     <>
       <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Nova+Square&display=swap');
         @keyframes code-fall {
           0%   { transform: translateY(-100%); }
           100% { transform: translateY(110vh); }
@@ -317,7 +318,7 @@ export default function TerminalHero() {
           border: 1px solid rgba(0,255,136,0.5);
           outline: none;
           padding: 12px 36px;
-          font-family: 'RoundedFixedsys', var(--font-geist-mono), monospace;
+          font-family: 'Nova Square', sans-serif;
           font-size: 0.95rem;
           color: #00ff88;
           letter-spacing: 0.06em;

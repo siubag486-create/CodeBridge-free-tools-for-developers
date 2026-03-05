@@ -3,7 +3,7 @@ import YamlToJsonClient from "@/components/tools/yaml-to-json/yaml-to-json-clien
 import ToolNavSidebar from "@/components/layout/tool-nav-sidebar";
 
 export const metadata: Metadata = {
-  title: "YAML to JSON Converter — Free Online Tool | OmniDev",
+  title: "The Best YAML to JSON Converter — Free, Instant, Secured, No Server | OmniDev",
   description:
     "Convert YAML to JSON (or JSON to YAML) instantly in your browser. Real-time conversion, syntax highlighting, file upload, download output. 100% free, no server required.",
   keywords: [
@@ -17,6 +17,17 @@ export const metadata: Metadata = {
     "online yaml converter",
     "free yaml tool",
   ],
+  openGraph: {
+    title: "The Best YAML to JSON Converter — Free, Instant, Secured, No Server | OmniDev",
+    description: "Convert YAML to JSON or JSON to YAML instantly in your browser. Real-time conversion, syntax highlighting, file upload & download. 100% free, no server required.",
+    url: "https://www.omnidevtools.com/tools/yaml-to-json",
+    type: "website",
+    images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "OmniDev YAML to JSON Converter" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: ["/og-image.jpg"],
+  },
 };
 
 const monoFont = "'RoundedFixedsys', var(--font-geist-mono), monospace";
@@ -32,6 +43,22 @@ export default function YamlToJsonPage() {
         overflow: "hidden",
       }}
     >
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebApplication",
+            "name": "YAML to JSON Converter",
+            "description": "Convert YAML to JSON or JSON to YAML instantly in your browser. Real-time conversion, syntax highlighting, file upload & download.",
+            "url": "https://www.omnidevtools.com/tools/yaml-to-json",
+            "image": "https://www.omnidevtools.com/og-image.jpg",
+            "applicationCategory": "DeveloperApplication",
+            "operatingSystem": "Web",
+            "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+          }),
+        }}
+      />
       <div
         className="grid-lines-bg"
         style={{

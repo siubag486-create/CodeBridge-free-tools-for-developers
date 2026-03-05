@@ -3,7 +3,7 @@ import Base64Client from "@/components/tools/base64/base64-client";
 import ToolNavSidebar from "@/components/layout/tool-nav-sidebar";
 
 export const metadata: Metadata = {
-  title: "Base64 Encoder/Decoder — Free Online Tool | OmniDev",
+  title: "The Best Base64 Encoder/Decoder — Free, Instant, Secured, No Server | OmniDev",
   description:
     "Encode and decode Base64 strings, URL-safe Base64, and images instantly in your browser. No server required. Supports UTF-8 text, drag & drop image upload, and data URL output.",
   keywords: [
@@ -14,6 +14,17 @@ export const metadata: Metadata = {
     "image to base64",
     "data url generator",
   ],
+  openGraph: {
+    title: "The Best Base64 Encoder/Decoder — Free, Instant, Secured, No Server | OmniDev",
+    description: "Encode and decode Base64 strings, URL-safe Base64, and images instantly in your browser. No server required.",
+    url: "https://www.omnidevtools.com/tools/base64",
+    type: "website",
+    images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "OmniDev Base64 Encoder/Decoder" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: ["/og-image.jpg"],
+  },
 };
 
 const monoFont = "'RoundedFixedsys', var(--font-geist-mono), monospace";
@@ -29,6 +40,22 @@ export default function Base64Page() {
         overflow: "hidden",
       }}
     >
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebApplication",
+            "name": "Base64 Encoder/Decoder",
+            "description": "Encode and decode Base64 strings, URL-safe Base64, and images instantly in your browser. No server required.",
+            "url": "https://www.omnidevtools.com/tools/base64",
+            "image": "https://www.omnidevtools.com/og-image.jpg",
+            "applicationCategory": "DeveloperApplication",
+            "operatingSystem": "Web",
+            "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+          }),
+        }}
+      />
       {/* Grid lines background */}
       <div
         className="grid-lines-bg"

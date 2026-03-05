@@ -3,7 +3,7 @@ import UrlEncoderClient from "@/components/tools/url-encoder/url-encoder-client"
 import ToolNavSidebar from "@/components/layout/tool-nav-sidebar";
 
 export const metadata: Metadata = {
-  title: "URL Encoder/Decoder — Free Online Tool | OmniDev",
+  title: "The Best URL Encoder/Decoder — Free, Instant, Secured, No Server | OmniDev",
   description:
     "Encode and decode URLs using percent-encoding instantly in your browser. Parse query string parameters into a readable table. No server required.",
   keywords: [
@@ -15,6 +15,17 @@ export const metadata: Metadata = {
     "urlencode",
     "encodeURIComponent",
   ],
+  openGraph: {
+    title: "The Best URL Encoder/Decoder — Free, Instant, Secured, No Server | OmniDev",
+    description: "Encode and decode URLs using percent-encoding instantly in your browser. Parse query string parameters into a readable table. No server required.",
+    url: "https://www.omnidevtools.com/tools/url-encoder",
+    type: "website",
+    images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "OmniDev URL Encoder/Decoder" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: ["/og-image.jpg"],
+  },
 };
 
 const monoFont = "'RoundedFixedsys', var(--font-geist-mono), monospace";
@@ -30,6 +41,22 @@ export default function UrlEncoderPage() {
         overflow: "hidden",
       }}
     >
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebApplication",
+            "name": "URL Encoder/Decoder",
+            "description": "Encode and decode URLs using percent-encoding instantly in your browser. Parse query string parameters into a readable table.",
+            "url": "https://www.omnidevtools.com/tools/url-encoder",
+            "image": "https://www.omnidevtools.com/og-image.jpg",
+            "applicationCategory": "DeveloperApplication",
+            "operatingSystem": "Web",
+            "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+          }),
+        }}
+      />
       {/* Grid lines background */}
       <div
         className="grid-lines-bg"

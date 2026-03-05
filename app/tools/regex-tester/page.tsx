@@ -3,7 +3,7 @@ import RegexTesterClient from "@/components/tools/regex-tester/regex-tester-clie
 import ToolNavSidebar from "@/components/layout/tool-nav-sidebar";
 
 export const metadata: Metadata = {
-  title: "Regex Tester — Free Online Tool | OmniDev",
+  title: "The Best Regex Tester — Free, Instant, Secured, No Server | OmniDev",
   description:
     "Test regular expressions in real-time. See matches highlighted instantly, explore capture groups, and toggle flags. No server required.",
   keywords: [
@@ -13,6 +13,17 @@ export const metadata: Metadata = {
     "online regex",
     "javascript regex",
   ],
+  openGraph: {
+    title: "The Best Regex Tester — Free, Instant, Secured, No Server | OmniDev",
+    description: "Test regular expressions in real-time. See matches highlighted instantly, explore capture groups, and toggle flags. No server required.",
+    url: "https://www.omnidevtools.com/tools/regex-tester",
+    type: "website",
+    images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "OmniDev Regex Tester" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: ["/og-image.jpg"],
+  },
 };
 
 const monoFont = "'RoundedFixedsys', var(--font-geist-mono), monospace";
@@ -28,6 +39,22 @@ export default function RegexTesterPage() {
         overflow: "hidden",
       }}
     >
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebApplication",
+            "name": "Regex Tester",
+            "description": "Test regular expressions in real-time. See matches highlighted instantly, explore capture groups, and toggle flags.",
+            "url": "https://www.omnidevtools.com/tools/regex-tester",
+            "image": "https://www.omnidevtools.com/og-image.jpg",
+            "applicationCategory": "DeveloperApplication",
+            "operatingSystem": "Web",
+            "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+          }),
+        }}
+      />
       {/* Grid lines background — matches hero */}
       <div
         className="grid-lines-bg"

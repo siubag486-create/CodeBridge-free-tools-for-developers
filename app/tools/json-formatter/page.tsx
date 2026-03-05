@@ -3,7 +3,7 @@ import JsonFormatterClient from "@/components/tools/json-formatter/json-formatte
 import ToolNavSidebar from "@/components/layout/tool-nav-sidebar";
 
 export const metadata: Metadata = {
-  title: "JSON Formatter & Validator — Free Online Tool | OmniDev",
+  title: "The Best JSON Formatter & Validator — Free, Instant, Secured, No Server | OmniDev",
   description:
     "Format, validate, and minify JSON instantly in your browser. No server required. Fast, free JSON beautifier with syntax highlighting and error detection.",
   keywords: [
@@ -13,6 +13,17 @@ export const metadata: Metadata = {
     "format json online",
     "json minifier",
   ],
+  openGraph: {
+    title: "The Best JSON Formatter & Validator — Free, Instant, Secured, No Server | OmniDev",
+    description: "Format, validate, and minify JSON instantly in your browser. No server required. Fast, free JSON beautifier with syntax highlighting and error detection.",
+    url: "https://www.omnidevtools.com/tools/json-formatter",
+    type: "website",
+    images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "OmniDev JSON Formatter" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: ["/og-image.jpg"],
+  },
 };
 
 const monoFont = "'RoundedFixedsys', var(--font-geist-mono), monospace";
@@ -28,6 +39,22 @@ export default function JsonFormatterPage() {
         overflow: "hidden",
       }}
     >
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebApplication",
+            "name": "JSON Formatter & Validator",
+            "description": "Format, validate, and minify JSON instantly in your browser. No server required.",
+            "url": "https://www.omnidevtools.com/tools/json-formatter",
+            "image": "https://www.omnidevtools.com/og-image.jpg",
+            "applicationCategory": "DeveloperApplication",
+            "operatingSystem": "Web",
+            "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+          }),
+        }}
+      />
       {/* Grid lines background — matches hero */}
       <div
         className="grid-lines-bg"

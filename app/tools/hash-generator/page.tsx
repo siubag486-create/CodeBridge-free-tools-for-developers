@@ -3,7 +3,7 @@ import HashGeneratorClient from "@/components/tools/hash-generator/hash-generato
 import ToolNavSidebar from "@/components/layout/tool-nav-sidebar";
 
 export const metadata: Metadata = {
-  title: "Hash Generator — MD5, SHA-256, SHA-512 & HMAC | OmniDev",
+  title: "The Best Hash Generator — Free, Instant, Secured, No Server | OmniDev",
   description:
     "Generate MD5, SHA-1, SHA-256, SHA-384, and SHA-512 hashes instantly in your browser. Supports text input, file upload, HMAC, and hash comparison. No server required.",
   keywords: [
@@ -17,6 +17,17 @@ export const metadata: Metadata = {
     "checksum generator",
     "online hash tool",
   ],
+  openGraph: {
+    title: "The Best Hash Generator — Free, Instant, Secured, No Server | OmniDev",
+    description: "Generate MD5, SHA-1, SHA-256, SHA-384, and SHA-512 hashes instantly in your browser. Supports text input, file upload, HMAC, and hash comparison. No server required.",
+    url: "https://www.omnidevtools.com/tools/hash-generator",
+    type: "website",
+    images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "OmniDev Hash Generator" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: ["/og-image.jpg"],
+  },
 };
 
 const monoFont = "'RoundedFixedsys', var(--font-geist-mono), monospace";
@@ -32,6 +43,22 @@ export default function HashGeneratorPage() {
         overflow: "hidden",
       }}
     >
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebApplication",
+            "name": "Hash Generator",
+            "description": "Generate MD5, SHA-1, SHA-256, SHA-384, and SHA-512 hashes instantly in your browser. Supports text input, file upload, and HMAC.",
+            "url": "https://www.omnidevtools.com/tools/hash-generator",
+            "image": "https://www.omnidevtools.com/og-image.jpg",
+            "applicationCategory": "DeveloperApplication",
+            "operatingSystem": "Web",
+            "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+          }),
+        }}
+      />
       <div
         className="grid-lines-bg"
         style={{ position: "fixed", inset: 0, zIndex: 0, pointerEvents: "none" }}
