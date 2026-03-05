@@ -58,22 +58,31 @@ This is a **Next.js 16 App Router** project using:
 
 Always dark — no light mode toggle.
 
-**CRT Terminal Theme:**
+**CRT Terminal Theme (CSS custom properties):**
 
 - `--terminal-bg: #0a0a0a` — page background
+- `--terminal-surface: #111111` / `--terminal-surface-2: #161616` — elevated surfaces
+- `--terminal-border: #1f1f1f` / `--terminal-border-bright: #2a2a2a` — borders
 - `--terminal-green: #00ff88` — primary accent
+- `--terminal-green-dim: #00cc6a` — dimmed green
 - `--electric-blue: #58a6ff` — secondary accent
-- `--comment-gray: #6e7681` — muted text
+- `--code-comment: #6e7681` — muted text
+- `--code-red: #ff7b72` / `--code-orange: #ffa657` / `--code-yellow: #e3b341` — syntax colors
 
 **Custom CSS utilities** (defined in `app/globals.css`):
 
-- `.crt-scanlines` — scanline overlay effect
+- `.crt-scanlines` — scanline overlay effect (`::before` pseudo)
 - `.terminal-glow` — green glow box-shadow
-- `.text-glow-green` — text shadow for headings
-- `.animate-fade-up` — entrance animation
-- `.cursor-blink` — blinking cursor
-- `.neo-card` — card with terminal border style
-- `.terminal-input` — placeholder color for terminal-style inputs (`::placeholder` rgba(110,118,129,0.35))
+- `.text-glow-green` / `.text-glow-blue` — text shadow for headings
+- `.animate-fade-up` — fade+slide entrance (0.6s)
+- `.delay-100` ~ `.delay-3000` — animation stagger delay utilities
+- `.cursor-blink` — blinking cursor (step-end 1s)
+- `.neo-card` — hover: translate(-8px,-8px) + white offset shadow
+- `.grid-lines-bg` — horizontal code-aesthetic grid lines
+- `.gradient-border` — green→blue gradient border via `::before`
+- `.noise-bg` — subtle noise texture overlay
+- `.syntax-keyword/string/function/number/comment/variable/tag` — code syntax colors
+- `.terminal-input` — placeholder: `rgba(110,118,129,0.35)`
 
 ## Typography
 
@@ -131,7 +140,7 @@ Always dark — no light mode toggle.
 
 ## Components
 
-- `components/hero/terminal-hero.tsx` — **Client**, typewriter animation + "Explore Our Tools" CTA 버튼 + 바운스 chevron (툴 그리드 없음)
+- `components/hero/terminal-hero.tsx` — **Client**, typewriter animation + "Explore Our Tools" Terminal Border 버튼 (hover: 초록 fill) + 바운스 chevron
 - `components/home-wrapper.tsx` — **Client**, scroll snap 컨테이너 (`scrollSnapType: y mandatory`), body overflow 제어
 - `components/landing/tools-landing.tsx` — **Server**, 9개 툴 hover-effect 그리드 + 6개 coming soon 섹션 (lucide-react 아이콘)
 - `components/layout/navbar.tsx` — Fixed top navbar (server)

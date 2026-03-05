@@ -311,42 +311,24 @@ export default function TerminalHero() {
         .chevron-wrap .chv:nth-child(1) { animation-delay: 0s;    border-color: rgba(0,255,136,0.25); }
         .chevron-wrap .chv:nth-child(2) { animation-delay: 0.2s;  border-color: rgba(0,255,136,0.5); }
         .chevron-wrap .chv:nth-child(3) { animation-delay: 0.4s;  border-color: rgba(0,255,136,0.8); }
-        .explore-cmd {
-          display: inline-flex;
-          align-items: center;
-          gap: 0;
-          background: rgba(0, 0, 0, 0.97);
-          border: none;
-          overflow: hidden;
+        .explore-btn {
           cursor: pointer;
-          transition: border-color 0.15s ease, box-shadow 0.15s ease;
-        }
-        .explore-cmd:hover {
-          box-shadow: 0 0 12px rgba(0,255,136,0.1);
-        }
-        .explore-cmd:hover .explore-run {
-          background: rgba(0,255,136,0.18);
+          background: transparent;
+          border: 1px solid rgba(0,255,136,0.5);
+          outline: none;
+          padding: 12px 36px;
+          font-family: 'RoundedFixedsys', var(--font-geist-mono), monospace;
+          font-size: 0.95rem;
           color: #00ff88;
-        }
-        .explore-cmd:hover .explore-line {
-          color: #e6edf3;
-        }
-        .explore-line {
-          font-family: var(--font-geist-mono), monospace;
-          font-size: 0.82rem;
-          padding: 10px 18px;
-          color: #ffffff;
-          transition: color 0.15s ease;
+          letter-spacing: 0.06em;
           white-space: nowrap;
+          transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
         }
-        .explore-run {
-          padding: 10px 14px;
-          border-left: 1px solid rgba(0,255,136,0.12);
-          color: rgba(0,255,136,0.5);
-          font-size: 0.72rem;
-          font-family: var(--font-geist-mono), monospace;
-          transition: background 0.15s ease, color 0.15s ease;
-          white-space: nowrap;
+        .explore-btn:hover {
+          background-color: #00ff88;
+          color: #0a0a0a;
+          border-color: #00ff88;
+          box-shadow: 0 0 24px rgba(0,255,136,0.3);
         }
       `}</style>
       <section
@@ -672,17 +654,8 @@ export default function TerminalHero() {
                 </span>
               </p>
 
-              <button className="explore-cmd" onClick={handleExplore}>
-                <span className="explore-line">
-                  <span style={{ color: "#ffffff" }}>$</span>
-                  {" "}
-                  <span style={{ color: "#ffffff" }}>omnidev</span>
-                  {" "}
-                  <span style={{ color: "#ffffff" }}>explore</span>
-                  {" "}
-                  <span style={{ color: "#ffffff" }}>--tools</span>
-                </span>
-                <span className="explore-run">▶ run</span>
+              <button className="explore-btn" onClick={handleExplore}>
+                Explore Our Tools
               </button>
             </div>
           )}
