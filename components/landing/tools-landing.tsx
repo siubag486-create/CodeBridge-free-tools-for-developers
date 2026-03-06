@@ -11,6 +11,7 @@ import {
   Search,
   ShieldCheck,
   Split,
+  Timer,
 } from "lucide-react";
 
 const TOOLS = [
@@ -86,11 +87,16 @@ const TOOLS = [
     href: "/tools/color-converter",
     icon: <Palette size={22} />,
   },
+  {
+    cmd: "cron-expression-parser",
+    desc: "Parse, validate & generate cron expressions",
+    href: "/tools/cron-expression-parser",
+    icon: <Timer size={22} />,
+  },
 ];
 
 const COMING_SOON = [
   { icon: " MD", cmd: "markdown-preview", desc: "Live Markdown rendering" },
-  { icon: "CRN", cmd: "cron-parser", desc: "Parse cron expressions" },
   { icon: "STR", cmd: "string-case-converter", desc: "camel ↔ snake ↔ kebab" },
   { icon: "BAS", cmd: "number-base-converter", desc: "Bin / Oct / Dec / Hex" },
 ];

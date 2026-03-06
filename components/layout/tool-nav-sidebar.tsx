@@ -16,6 +16,7 @@ const tools = [
   { id: "timestamp-converter",  label: "timestamp-converter",  desc: "Unix ↔ Datetime"  },
   { id: "sql-formatter",        label: "sql-formatter",        desc: "Format & Minify"  },
   { id: "color-converter",      label: "color-converter",      desc: "HEX / RGB / HSL / OKLCH" },
+  { id: "cron-expression-parser", label: "cron-expression-parser", desc: "Parser & Generator" },
 ];
 
 export default function ToolNavSidebar({ currentTool }: { currentTool: string }) {
