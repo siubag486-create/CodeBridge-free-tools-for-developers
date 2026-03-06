@@ -7,6 +7,7 @@ import {
   Fingerprint,
   Key,
   Link2,
+  Palette,
   Search,
   ShieldCheck,
   Split,
@@ -79,14 +80,19 @@ const TOOLS = [
     href: "/tools/sql-formatter",
     icon: <Database size={22} />,
   },
+  {
+    cmd: "color-converter",
+    desc: "HEX / RGB / HSL / OKLCH converter",
+    href: "/tools/color-converter",
+    icon: <Palette size={22} />,
+  },
 ];
 
 const COMING_SOON = [
-  { icon: "CRN", cmd: "cron-parser", desc: "Parse cron expressions" },
-  { icon: "CLR", cmd: "color-converter", desc: "HEX ↔ RGB ↔ HSL ↔ OKLCH" },
-  { icon: "BAS", cmd: "number-base-converter", desc: "Bin / Oct / Dec / Hex" },
-  { icon: "STR", cmd: "string-case-converter", desc: "camel ↔ snake ↔ kebab" },
   { icon: " MD", cmd: "markdown-preview", desc: "Live Markdown rendering" },
+  { icon: "CRN", cmd: "cron-parser", desc: "Parse cron expressions" },
+  { icon: "STR", cmd: "string-case-converter", desc: "camel ↔ snake ↔ kebab" },
+  { icon: "BAS", cmd: "number-base-converter", desc: "Bin / Oct / Dec / Hex" },
 ];
 
 export default function ToolsLanding() {

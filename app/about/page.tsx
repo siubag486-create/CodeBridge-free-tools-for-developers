@@ -194,6 +194,10 @@ export default function AboutPage() {
                 name: "SQL Formatter",
                 desc: "Format, beautify, and minify SQL queries with dialect support for MySQL, PostgreSQL, T-SQL, SQLite, BigQuery, and more",
               },
+              {
+                name: "Color Converter",
+                desc: "Convert between HEX, RGB, HSL, and OKLCH with WCAG contrast ratios, CSS variable output, and color palette generation",
+              },
             ].map(({ name, desc }) => (
               <div
                 key={name}
@@ -251,8 +255,16 @@ export default function AboutPage() {
           >
             {[
               {
+                name: "Markdown Preview",
+                desc: "Live Markdown rendering with GitHub-flavored syntax support",
+              },
+              {
                 name: "Cron Expression Parser",
                 desc: "Parse cron expressions and preview upcoming execution times",
+              },
+              {
+                name: "String Case Converter",
+                desc: "Convert between camelCase, snake_case, kebab-case, and PascalCase",
               },
             ].map(({ name, desc }) => (
               <div

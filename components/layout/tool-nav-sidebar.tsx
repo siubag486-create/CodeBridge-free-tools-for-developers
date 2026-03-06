@@ -15,6 +15,7 @@ const tools = [
   { id: "yaml-to-json",         label: "yaml-to-json",         desc: "YAML ↔ JSON"      },
   { id: "timestamp-converter",  label: "timestamp-converter",  desc: "Unix ↔ Datetime"  },
   { id: "sql-formatter",        label: "sql-formatter",        desc: "Format & Minify"  },
+  { id: "color-converter",      label: "color-converter",      desc: "HEX / RGB / HSL / OKLCH" },
 ];
 
 export default function ToolNavSidebar({ currentTool }: { currentTool: string }) {

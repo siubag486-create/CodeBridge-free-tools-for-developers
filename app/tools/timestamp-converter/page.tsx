@@ -28,6 +28,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
+    title: "The Best Timestamp Converter — Free, Instant, Secured, No Server | OmniDev",
+    description:
+      "Convert Unix timestamps to human-readable dates and back. Supports seconds and milliseconds, multiple timezones, ISO 8601, UTC, and relative time.",
     images: ["/og-image.jpg"],
   },
 };
