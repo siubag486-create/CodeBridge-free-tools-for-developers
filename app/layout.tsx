@@ -54,6 +54,18 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} ${spaceMono.variable} antialiased`}
         style={{ backgroundColor: "var(--terminal-bg)" }}
       >
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "name": "OmniDev",
+              "url": "https://www.omnidevtools.com",
+              "logo": "https://www.omnidevtools.com/logo_512.png",
+            }),
+          }}
+        />
         <Navbar />
         {children}
         <Footer />
