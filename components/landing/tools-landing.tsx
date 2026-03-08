@@ -4,6 +4,7 @@ import {
   Braces,
   Clock,
   Database,
+  FileText,
   Fingerprint,
   Key,
   Link2,
@@ -93,10 +94,15 @@ const TOOLS = [
     href: "/tools/cron-expression-parser",
     icon: <Timer size={22} />,
   },
+  {
+    cmd: "markdown-preview",
+    desc: "GFM editor with live preview & TOC",
+    href: "/tools/markdown-preview",
+    icon: <FileText size={22} />,
+  },
 ];
 
 const COMING_SOON = [
-  { icon: " MD", cmd: "markdown-preview", desc: "Live Markdown rendering" },
   { icon: "STR", cmd: "string-case-converter", desc: "camel ↔ snake ↔ kebab" },
   { icon: "BAS", cmd: "number-base-converter", desc: "Bin / Oct / Dec / Hex" },
 ];

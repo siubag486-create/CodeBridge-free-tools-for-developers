@@ -17,6 +17,7 @@ const tools = [
   { id: "sql-formatter",        label: "sql-formatter",        desc: "Format & Minify"  },
   { id: "color-converter",      label: "color-converter",      desc: "HEX / RGB / HSL / OKLCH" },
   { id: "cron-expression-parser", label: "cron-expression-parser", desc: "Parser & Generator" },
+  { id: "markdown-preview",      label: "markdown-preview",      desc: "Editor & Live Preview" },
 ];
 
 export default function ToolNavSidebar({ currentTool }: { currentTool: string }) {

@@ -198,6 +198,10 @@ export default function AboutPage() {
                 name: "Color Converter",
                 desc: "Convert between HEX, RGB, HSL, and OKLCH with WCAG contrast ratios, CSS variable output, and color palette generation",
               },
+              {
+                name: "Markdown Editor & Preview",
+                desc: "Write GitHub Flavored Markdown with real-time preview, syntax-highlighted code blocks, table of contents generation, README templates, and HTML export",
+              },
             ].map(({ name, desc }) => (
               <div
                 key={name}
