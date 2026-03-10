@@ -9,12 +9,15 @@
 - [x] Google Search Console 등록
 - [x] sitemap 제출
 - [x] 색인 생성 요청
+- [x] Markdown Preview 도구 개발 완료
+- [x] Cron Expression Parser 도구 개발 완료
+- [x] JSON to CSV Converter 도구 개발 완료 (총 15개 도구)
 
 ---
 
 ## 진행 중 / 예정
 
-### 백링크 확보 (우선순위 높음)
+### 백링크 확보 (우선순위 높음) — 직접 포스팅 필요
 - [ ] Reddit 포스팅 — r/webdev, r/programming, r/javascript
 - [ ] Product Hunt 런칭 준비 및 제출
 - [ ] Hacker News — Show HN 포스팅
@@ -32,10 +35,9 @@
 - [ ] Core Web Vitals (LCP, CLS, FID) 개선
 
 ### 신규 도구 개발 (트래픽 유입 확대)
-- [ ] Markdown Preview
-- [ ] Cron Expression Parser
-- [ ] String Case Converter
-- [ ] Number Base Converter
+- [ ] String Case Converter — camelCase ↔ snake_case ↔ kebab-case ↔ PascalCase
+- [ ] Number Base Converter — 2/8/10/16진수 변환
+- [ ] Password Generator — 보안 랜덤 비밀번호 생성 (Web Crypto API)
 
 ---
 

@@ -50,7 +50,7 @@ This is a **Next.js 16 App Router** project using:
 
 - `app/` — Next.js App Router pages and layouts
 - `app/globals.css` — Global styles, Tailwind imports, CSS variable tokens
-- `app/sitemap.ts` — 자동 sitemap.xml 생성 (19개 페이지)
+- `app/sitemap.ts` — 자동 sitemap.xml 생성 (20개 페이지)
 - `app/robots.ts` — 자동 robots.txt 생성
 - `lib/utils.ts` — `cn()` helper
 - `components/ui/` — shadcn/ui generated components (added via CLI)
@@ -177,7 +177,7 @@ Always dark — no light mode toggle.
 - `components/tools/timestamp-converter/timestamp-converter-client.tsx` — **Client**
 - `components/tools/sql-formatter/sql-formatter-client.tsx` — **Client** (sql-formatter 패키지)
 - `components/tools/color-converter/color-converter-client.tsx` — **Client**, 순수 JS 색상 변환 (HEX/RGB/HSL/OKLCH), custom 2D HSV picker, WCAG contrast, palette (외부 패키지 없음)
-- `components/tools/cron-expression-parser/cron-expression-parser-client.tsx` — **Client**, Cron 파싱/검증/빌더 (외부 패키지 없음)
+- `components/tools/cron-expression-parser/cron-parser-client.tsx` — **Client**, Cron 파싱/검증/빌더 (외부 패키지 없음)
 - `components/tools/markdown-preview/markdown-preview-client.tsx` — **Client**, GFM 에디터 (marked v17 + hljs), Split/Editor/Preview/HTML/TOC 탭, Table Generator, Scroll Sync
 - `components/tools/json-to-csv-converter/json-to-csv-converter-client.tsx` — **Client**, JSON↔CSV 양방향 변환, flatten, 구분자, 파일업로드/다운로드 (외부 패키지 없음)
 - `components/contact/contact-form-client.tsx` — **Client**, Google Sheets 연동 폼 (GAS fetch, `no-cors`), Email/Type/Feature Request 필드
