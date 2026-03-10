@@ -202,6 +202,10 @@ export default function AboutPage() {
                 name: "Markdown Editor & Preview",
                 desc: "Write GitHub Flavored Markdown with real-time preview, syntax-highlighted code blocks, table of contents generation, README templates, and HTML export",
               },
+              {
+                name: "JSON ↔ CSV Converter",
+                desc: "Convert JSON arrays to CSV and CSV back to JSON with nested object flattening, custom delimiters, type inference, and one-click file download",
+              },
             ].map(({ name, desc }) => (
               <div
                 key={name}

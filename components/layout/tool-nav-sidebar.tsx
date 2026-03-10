@@ -18,6 +18,7 @@ const tools = [
   { id: "color-converter",      label: "color-converter",      desc: "HEX / RGB / HSL / OKLCH" },
   { id: "cron-expression-parser", label: "cron-expression-parser", desc: "Parser & Generator" },
   { id: "markdown-preview",      label: "markdown-preview",      desc: "Editor & Live Preview" },
+  { id: "json-to-csv-converter", label: "json-to-csv-converter", desc: "JSON ↔ CSV Converter" },
 ];
 
 export default function ToolNavSidebar({ currentTool }: { currentTool: string }) {

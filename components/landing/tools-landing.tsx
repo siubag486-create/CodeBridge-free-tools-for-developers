@@ -12,6 +12,7 @@ import {
   Search,
   ShieldCheck,
   Split,
+  Table,
   Timer,
 } from "lucide-react";
 
@@ -100,11 +101,18 @@ const TOOLS = [
     href: "/tools/markdown-preview",
     icon: <FileText size={22} />,
   },
+  {
+    cmd: "json-to-csv-converter",
+    desc: "JSON ↔ CSV converter with flatten & download",
+    href: "/tools/json-to-csv-converter",
+    icon: <Table size={22} />,
+  },
 ];
 
 const COMING_SOON = [
   { icon: "STR", cmd: "string-case-converter", desc: "camel ↔ snake ↔ kebab" },
   { icon: "BAS", cmd: "number-base-converter", desc: "Bin / Oct / Dec / Hex" },
+  { icon: "PWD", cmd: "password-generator", desc: "Secure random passwords" },
 ];
 
 export default function ToolsLanding() {

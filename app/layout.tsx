@@ -62,7 +62,7 @@ export default function RootLayout({
               "@type": "Organization",
               "name": "OmniDev",
               "url": "https://www.omnidevtools.com",
-              "logo": "https://www.omnidevtools.com/logo_512.png",
+              "logo": "https://www.omnidevtools.com/logo_512_v2.png",
             }),
           }}
         />
